@@ -1,4 +1,4 @@
-package App.SilentSpark.silentspark.ui.theme
+package App.SilentSpark.silentspark.ui.theme.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
