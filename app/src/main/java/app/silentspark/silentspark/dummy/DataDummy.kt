@@ -1,6 +1,6 @@
 package app.silentspark.silentspark.dummy
 
-import app.silentspark.silentspark.R
+import App.SilentSpark.silentspark.R
 import app.silentspark.silentspark.model.Course
 
 object DataDummy {
