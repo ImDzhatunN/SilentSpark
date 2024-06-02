@@ -1,7 +1,6 @@
 package app.silentspark.silentspark.dummy
 
 import App.SilentSpark.silentspark.R
-import app.silentspark.silentspark.model.Course
 import app.silentspark.silentspark.model.Kelas
 
 object DataKelas {

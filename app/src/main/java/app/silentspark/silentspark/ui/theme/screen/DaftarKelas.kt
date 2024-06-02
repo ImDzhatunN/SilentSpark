@@ -17,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.silentspark.silentspark.dummy.DataKelas
-import app.silentspark.silentspark.model.Course
 import app.silentspark.silentspark.model.Kelas
 import app.silentspark.silentspark.ui.theme.components.ItemRowKelas
 
