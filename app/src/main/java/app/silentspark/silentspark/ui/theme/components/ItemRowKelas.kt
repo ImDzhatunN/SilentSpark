@@ -28,12 +28,12 @@ import app.silentspark.silentspark.ui.theme.theme.poppinsFamily
 import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
-fun ItemRowBeranda(
+fun ItemRowKelas(
     modifier: Modifier = Modifier,
     image: Int,
     title: String,
     desc: String,
-    price: String,
+    bulan : String,
 ) {
     Box(
         modifier = modifier
@@ -70,7 +70,7 @@ fun ItemRowBeranda(
                     letterSpacing = 1.sp
                 )
                 Text(
-                    text = stringResource(id = R.string.price, price),
+                    text = bulan,
                     fontFamily = poppinsFamily,
                     fontWeight = FontWeight.Medium,
                     color = putih,
@@ -105,11 +105,11 @@ fun ItemRowBeranda(
 @Composable
 private fun Preview() {
     SilentSparkTheme {
-        ItemRowBeranda(
+        ItemRowKelas(
             image = R.drawable.illus_teach, title = "Bianca Savador", desc = stringResource(
                 id = R.string.lorem
             ),
-            price = "100.000"
+            bulan = "1 bulan"
         )
     }
 }

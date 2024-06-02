@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaScreen
 import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,10 +21,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             SilentSparkTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                   BerandaSiswaScreen(
+                       Modifier.padding(innerPadding)
+                   )
                 }
             }
         }

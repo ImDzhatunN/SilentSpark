@@ -1,6 +1,6 @@
 package app.silentspark.silentspark.ui.theme.components
 
-import app.silentspark.silentspark.R
+import App.SilentSpark.silentspark.R
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape

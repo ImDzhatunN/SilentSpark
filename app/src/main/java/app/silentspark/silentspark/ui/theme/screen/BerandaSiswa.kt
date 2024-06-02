@@ -1,6 +1,6 @@
 package app.silentspark.silentspark.ui.theme.screen
 
-import app.silentspark.silentspark.R
+import App.SilentSpark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -37,6 +37,7 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun BerandaSiswaScreen(
+    modifier: Modifier = Modifier,
     viewModel: HomeViewModel = koinViewModel()
 ){
 
@@ -88,7 +89,7 @@ fun BerandaSiswaContent(
                 Text(text = "Siswa")
             }
             Spacer(modifier = Modifier.weight(1f))
-
+//
             Image(painter = painterResource(id = R.drawable.ic_notif), contentDescription = "notification")
         }
 
