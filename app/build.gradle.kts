@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "App.SilentSpark.silentspark"
+    namespace = "app.silentspark.silentspark"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "App.SilentSpark.silentspark"
+        applicationId = "app.silentspark.silentspark"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

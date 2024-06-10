@@ -14,9 +14,11 @@ val Green = Color(0xFF67725F)
 val Coklat = Color(0xFF443A33)
 val KuningTua = Color(0xFFAC9062)
 val KuningMuda = Color(0xFFBBA661)
-val Abuabu = Color(0xFFD9D9D9)
+val AbuBiruTua = Color(0xFF64748B)
+val AbuBiruMuda = Color(0xFFCBD5E1)
+val Abuabu = Color(0xFFA1A1AA)
+val AbuabuMuda = Color(0xFFD9D9D9)
 val putih = Color(0xFFF2F2F2)
 
 val colorLinear1 = Color(0xFFF3EEE8)
 val colorLinear2 = Color(0xFF67725F)
-

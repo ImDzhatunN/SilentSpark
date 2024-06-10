@@ -1,6 +1,6 @@
 package app.silentspark.silentspark.dummy
 
-import App.SilentSpark.silentspark.R
+import app.silentspark.silentspark.R
 import app.silentspark.silentspark.model.Course
 
 object DataDummy {
@@ -14,8 +14,8 @@ object DataDummy {
         Course(6, "Course 1", R.drawable.illus_teach, "Description data course", "100.000"),
         Course(7, "Course 1", R.drawable.illus_teach, "Description data course", "100.000"),
         Course(8, "Course 1", R.drawable.illus_teach, "Description data course", "100.000"),
-
         )
+
 
 
 
