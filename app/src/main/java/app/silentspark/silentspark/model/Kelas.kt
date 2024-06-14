@@ -6,4 +6,5 @@ data class Kelas(
     val image : Int,
     val desc : String,
     val bulan : String
+
 )
