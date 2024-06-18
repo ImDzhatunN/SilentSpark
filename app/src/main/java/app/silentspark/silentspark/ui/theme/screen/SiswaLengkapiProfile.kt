@@ -120,7 +120,7 @@ fun SiswaLengkapiProfileScreen() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 private fun PreviewSiswaLengkapiProfile() {
     SiswaLengkapiProfileScreen()
