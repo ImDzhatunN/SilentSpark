@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.sp
 import app.silentspark.silentspark.R
 import androidx.compose.runtime.*
 import app.silentspark.silentspark.ui.theme.theme.AbuBiruTua
+import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.putih
 
 
@@ -41,10 +42,6 @@ fun ItemSearchBar(
     onActiveChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val backgroundColor = Color.Gray.copy(alpha = 0.1f)
-    val hintColor = Color.Gray
-    val textColor = Color.Black
-    val iconColor = Color.Gray
 
     Column(
         modifier = modifier
@@ -73,7 +70,7 @@ fun ItemSearchBar(
                     Icon(
                         imageVector = Icons.Default.Search,
                         contentDescription = null,
-                        tint = iconColor,
+                        tint = Abuabu,
                         modifier = Modifier.padding(start = 16.dp, end = 8.dp)
                     )
 
@@ -84,7 +81,7 @@ fun ItemSearchBar(
                             onSearch()
                         },
                         textStyle = TextStyle(
-                            color = textColor,
+                            color = AbuBiruTua,
                             fontSize = 16.sp,
                             fontFamily = FontFamily(Font(R.font.poppins_regular))
                         ),

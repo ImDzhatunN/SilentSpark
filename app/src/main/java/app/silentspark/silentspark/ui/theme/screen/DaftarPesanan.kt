@@ -9,13 +9,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SearchBar
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.ui.text.font.Font
@@ -48,7 +46,7 @@ fun DaftarPesanan(
     listPesan: List<Pesanan> = emptyList(),
     onBackClick: () -> Unit = {},
 ) {
-    var query by remember { mutableStateOf("") }
+    val query by remember { mutableStateOf("") }
     var active by remember { mutableStateOf(false) }
     val filteredList = listPesan.filter {
         it.desc.contains(query, ignoreCase = true)
