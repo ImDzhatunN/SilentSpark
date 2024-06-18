@@ -1,7 +1,6 @@
 package app.silentspark.silentspark.dummy
 
 import App.SilentSpark.silentspark.R
-import app.silentspark.silentspark.model.Bank
 import app.silentspark.silentspark.model.Course
 
 object DataDummy {
@@ -15,11 +14,9 @@ object DataDummy {
         Course(6, "Course 1", R.drawable.illus_teach, "Description data course", "100.000"),
         Course(7, "Course 1", R.drawable.illus_teach, "Description data course", "100.000"),
         Course(8, "Course 1", R.drawable.illus_teach, "Description data course", "100.000"),
+
         )
-    val listbank = listOf(
-        Bank(name = "Mandiri"),
-        Bank(name = "BNI"),
-        Bank(name = "BSI"),
-        Bank(name = "BTN"),
-    )
+
+
+
 }
