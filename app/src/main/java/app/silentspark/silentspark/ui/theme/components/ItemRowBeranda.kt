@@ -1,6 +1,6 @@
 package app.silentspark.silentspark.ui.theme.components
 
-import App.SilentSpark.silentspark.R
+import app.silentspark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -106,9 +106,9 @@ fun ItemRowBeranda(
 private fun Preview() {
     SilentSparkTheme {
         ItemRowBeranda(
-            image = R.drawable.illus_teach, title = "Bianca Savador", desc = stringResource(
-                id = R.string.lorem
-            ),
+            image = R.drawable.illus_teach,
+            title = "Bianca Savador",
+            desc = stringResource(id = R.string.lorem),
             price = "100.000"
         )
     }

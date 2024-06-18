@@ -1,5 +1,6 @@
 package app.silentspark.silentspark.ui.theme.screen
 
+
 import app.silentspark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -14,35 +15,33 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import app.silentspark.silentspark.ui.theme.components.BoxLogin
 import app.silentspark.silentspark.ui.theme.theme.Green
 import app.silentspark.silentspark.ui.theme.theme.putih
+import app.silentspark.silentspark.ui.theme.components.BoxSingUp
 
 @Composable
-fun LoginScreen (
-    modifier: Modifier = Modifier,
-
+fun SignUpScreen (
+    modifier: Modifier =Modifier
 ) {
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(color = Green)
     ){
-        Row ( horizontalArrangement = Arrangement.End
-        ) { Spacer(modifier = modifier.weight(1f))
-            Image(
-                painter = painterResource(id = R.drawable.shape1),
-                contentDescription = "")
+        Row (horizontalArrangement = Arrangement.End)
+        {
+            Spacer(modifier = modifier.weight(1f))
+            Image(painter = painterResource(id = R.drawable.shape1), contentDescription = "")
         }
     }
     Column {
@@ -108,14 +107,13 @@ fun LoginScreen (
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter
     ) {
-        BoxLogin()
+        BoxSingUp()
     }
 }
 
 
 @Composable
 @Preview(showBackground = true)
-fun PreviewLoginScreen() {
-    LoginScreen()
+fun PreviewSignUpScreen() {
+    SignUpScreen()
 }
-

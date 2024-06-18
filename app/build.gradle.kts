@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "App.SilentSpark.silentspark"
+    namespace = "app.silentspark.silentspark"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "App.SilentSpark.silentspark"
+        applicationId = "app.silentspark.silentspark"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -71,11 +71,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
-    implementation(libs.androidx.material.icons.extended)
+
+
+    implementation ("androidx.compose.material:material-icons-extended:1.6.8")
+
 }
 
 
