@@ -106,9 +106,9 @@ fun ItemRowBeranda(
 private fun Preview() {
     SilentSparkTheme {
         ItemRowBeranda(
-            image = R.drawable.illus_teach, title = "Bianca Savador", desc = stringResource(
-                id = R.string.lorem
-            ),
+            image = R.drawable.illus_teach,
+            title = "Bianca Savador",
+            desc = stringResource(id = R.string.lorem),
             price = "100.000"
         )
     }

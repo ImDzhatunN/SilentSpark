@@ -30,7 +30,8 @@ import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
 fun LoginScreen (
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+
 ) {
     Column(
         modifier = modifier
@@ -39,7 +40,9 @@ fun LoginScreen (
     ){
         Row ( horizontalArrangement = Arrangement.End
         ) { Spacer(modifier = modifier.weight(1f))
-            Image(painter = painterResource(id = R.drawable.shape1), contentDescription = "")
+            Image(
+                painter = painterResource(id = R.drawable.shape1),
+                contentDescription = "")
         }
     }
     Column {
