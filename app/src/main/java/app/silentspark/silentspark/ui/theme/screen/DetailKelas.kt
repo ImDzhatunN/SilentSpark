@@ -1,6 +1,6 @@
 package app.silentspark.silentspark.ui.theme.screen
 
-import App.SilentSpark.silentspark.R
+import app.silentspark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
