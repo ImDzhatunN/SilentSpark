@@ -107,7 +107,13 @@ fun BerandaSiswaContent(
 
         LazyColumn {
             items(listCourse) { course ->
-                ItemRowBeranda(image = course.image, title = course.title, desc = course.desc, price = course.price, modifier = Modifier.padding(top = 16.dp).clickable {
+                ItemRowBeranda(image = course.image,
+                    title = course.title,
+                    desc = course.desc,
+                    price = course.price,
+                    modifier = Modifier
+                        .padding(top = 16.dp)
+                        .clickable {
 
                 })
             }
