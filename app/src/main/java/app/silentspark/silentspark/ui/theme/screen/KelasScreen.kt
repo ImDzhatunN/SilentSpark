@@ -19,26 +19,17 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.silentspark.silentspark.dummy.DataKelas
 import app.silentspark.silentspark.model.Kelas
-import app.silentspark.silentspark.model.Pesanan
-import app.silentspark.silentspark.ui.theme.components.BoxItemDaftarPesanan
 import app.silentspark.silentspark.ui.theme.components.ItemRowKelas
-import app.silentspark.silentspark.ui.theme.components.ItemSearchBarPreview
-import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.Green
 import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 
