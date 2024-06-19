@@ -58,7 +58,7 @@ fun TentangGuru(
                     text = "Nama",
                     color = Coklat,
                     fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.poppins_regular)),
+                    fontFamily = FontFamily(Font(R.font.poppins_medium)),
                 )
                 Text(
                     text = name,
@@ -80,7 +80,7 @@ fun TentangGuru(
                     text = "Sisa Sesi Perhari",
                     color = Coklat,
                     fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.poppins_regular)),
+                    fontFamily = FontFamily(Font(R.font.poppins_medium)),
                 )
                 Text(
                     text = date,
@@ -101,7 +101,7 @@ fun TentangGuru(
                     text = "Bahasa",
                     color = Coklat,
                     fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.poppins_regular)),
+                    fontFamily = FontFamily(Font(R.font.poppins_medium)),
                 )
                 Text(
                     text = bahasa,
@@ -122,7 +122,7 @@ fun TentangGuru(
                     text = "Selesai",
                     color = Coklat,
                     fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.poppins_regular)),
+                    fontFamily = FontFamily(Font(R.font.poppins_medium)),
                 )
                 Text(
                     text = sesi,

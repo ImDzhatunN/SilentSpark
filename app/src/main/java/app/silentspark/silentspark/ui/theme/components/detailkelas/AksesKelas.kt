@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -28,14 +29,14 @@ import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 @Composable
 fun AksesKelas(
     modifier: Modifier = Modifier,
-    name : String,
+    topik : String,
     linkzoom : String,
 
     ) {
     Box(
         modifier = modifier
             .width(360.dp)
-            .height(200.dp)
+            .height(270.dp)
             .background(
                 Color(0xFF67725F).copy(alpha = 0.15f),
                 shape = RoundedCornerShape(25.dp)
@@ -51,6 +52,7 @@ fun AksesKelas(
                 fontSize = 18.sp,
                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
             )
+            Spacer(modifier = Modifier.height(10.dp))
 
             Text(
                 text = "Topik",
@@ -59,15 +61,23 @@ fun AksesKelas(
                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
             )
             Text(
-                text = name,
+                text = topik,
                 color = Coklat,
-                fontSize = 14.sp,
-                fontFamily = FontFamily(Font(R.font.poppins_regular)),
+                fontSize = 16.sp,
+                fontFamily = FontFamily(Font(R.font.poppins_medium)),
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = "Link Zoom",
+                color = Coklat,
+                fontSize = 16.sp,
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
             )
             Text(
                 text = linkzoom,
                 color = Color.Blue,
-                fontSize = 14.sp,
+                fontSize = 16.sp,
                 fontFamily = FontFamily(Font(R.font.poppins_regular)),
             )
 
@@ -82,8 +92,8 @@ fun AksesKelas(
 private fun Preview() {
     SilentSparkTheme {
        AksesKelas(
-            name = "Bianca Savador",
-           linkzoom = "dsfdf"
+            topik = "Memahami macam isyarat (Isyando, ASL, BISINDO",
+           linkzoom = "https://us06web.zoom.us/j/89554588370?pwd=fQTIuqCON8Y3AIjo9gGxyRpkMeFOt0.1"
 
         )
     }

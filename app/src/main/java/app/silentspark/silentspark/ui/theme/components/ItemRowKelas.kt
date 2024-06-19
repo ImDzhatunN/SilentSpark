@@ -24,19 +24,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
+
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.silentspark.silentspark.model.Kelas
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.Coklat
-import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
-import app.silentspark.silentspark.ui.theme.theme.poppinsFamily
-import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
 fun ItemRowKelas(
@@ -127,11 +122,6 @@ fun ItemRowKelas(
                 )
             }
         }
-
-
-
-
     }
-
 }
 

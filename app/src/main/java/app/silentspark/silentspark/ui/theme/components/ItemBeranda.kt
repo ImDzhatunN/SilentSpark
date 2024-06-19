@@ -3,42 +3,59 @@ package app.silentspark.silentspark.ui.theme.components
 import app.silentspark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CalendarMonth
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import app.silentspark.silentspark.ui.theme.theme.Abuabu
+import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.KuningMuda
 import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 import app.silentspark.silentspark.ui.theme.theme.poppinsFamily
 import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
-fun ItemRowBeranda(
+fun ItemBeranda(
     modifier: Modifier = Modifier,
     image: Int,
     title: String,
     desc: String,
     price: String,
 ) {
+
     Box(
         modifier = modifier
+            .width(460.dp)
+            .height(150.dp)
             .clip(RoundedCornerShape(16.dp))
-            .fillMaxWidth()
             .background(KuningMuda)
 
     ) {
@@ -46,70 +63,78 @@ fun ItemRowBeranda(
             Image(
                 painter = painterResource(image),
                 contentDescription = "",
-                modifier = modifier
-                    .size(width = 87.dp, height = 70.dp)
+                modifier = Modifier
+                    .size(width = 90.dp, height = 75.dp)
                     .padding(start = 16.dp)
-                    .align(Alignment.CenterVertically),
+                    .align(Alignment.CenterVertically)
+                    .clip(RoundedCornerShape(7.dp)),
                 contentScale = ContentScale.Crop
             )
 
             Column(modifier.padding(start = 8.dp, top = 8.dp, bottom = 8.dp)) {
                 Text(
                     text = title,
-                    fontFamily = poppinsFamily,
-                    fontWeight = FontWeight.Bold,
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                     color = putih,
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
+                    letterSpacing = 0.2.sp
                 )
                 Text(
                     text = desc,
-                    fontFamily = poppinsFamily,
-                    fontWeight = FontWeight.SemiBold,
+                    fontFamily = FontFamily(Font(R.font.poppins_medium)),
                     color = putih,
-                    fontSize = 10.sp,
-                    letterSpacing = 1.sp
+                    lineHeight = 15.sp,
+                    fontSize = 14.sp,
+                    letterSpacing = 0.2.sp
                 )
                 Text(
-                    text = stringResource(id = R.string.price, price),
-                    fontFamily = poppinsFamily,
-                    fontWeight = FontWeight.Medium,
+                    text = price,
+                    fontFamily = FontFamily(Font(R.font.poppins_regular)),
                     color = putih,
-                    fontSize = 10.sp,
+                    fontSize = 14.sp,
+                    letterSpacing = 0.2.sp
                 )
             }
         }
 
         Row(
-            modifier
-                .align(Alignment.BottomEnd)
-                .padding(bottom = 16.dp, end = 16.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+                .align(Alignment.BottomEnd),
+            horizontalArrangement = Arrangement.End,
+            verticalAlignment = Alignment.Bottom
         ) {
             Image(
                 painter = painterResource(id = R.drawable.ic_stars),
                 contentDescription = "",
-                modifier = modifier
-                    .align(Alignment.CenterVertically)
+                modifier = Modifier
+                    .align(Alignment.CenterVertically) // Posisi vertikal di tengah
             )
 
-            Text(text = "(50)" , fontFamily = poppinsFamily, fontWeight = FontWeight.Medium, color = putih, fontSize = 10.sp, modifier = modifier.padding(start = 4.dp))
+            Text(
+                text = "(50)",
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                color = putih,
+                fontSize = 12.sp,
+                letterSpacing = 0.2.sp,
+                modifier = Modifier.align(Alignment.CenterVertically) // Posisi vertikal di tengah
+            )
         }
-
     }
-
-
-
-
 }
+
+
 
 @Preview(showBackground = true)
 @Composable
 private fun Preview() {
     SilentSparkTheme {
-        ItemRowBeranda(
+        ItemBeranda(
             image = R.drawable.illus_teach,
             title = "Bianca Savador",
             desc = stringResource(id = R.string.lorem),
-            price = "100.000"
+            price = "Rp 100.000"
         )
     }
 }

@@ -45,7 +45,8 @@ fun ButtonKirim(
                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                 color = Abuabu,
                 textAlign = TextAlign.Right,),
-            modifier = Modifier.align(Alignment.CenterVertically)
+            modifier = Modifier
+                .align(Alignment.CenterVertically)
         )
 
 

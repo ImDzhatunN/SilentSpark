@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
@@ -45,11 +46,12 @@ fun BannerMain(modifier: Modifier = Modifier) {
     ) {
         Row {
             Image(
+                alignment = Alignment.TopCenter,
                 painter = painterResource(id = R.drawable.img_main_banner),
                 contentDescription = "",
                 modifier = modifier
-                    .size(88.dp)
-                    .padding(top = 8.dp, start = 16.dp)
+                    .size(110.dp)
+                    .padding( start = 16.dp)
             )
 
             Column(modifier.padding(start = 8.dp, top = 8.dp, bottom = 8.dp)) {
@@ -66,13 +68,16 @@ fun BannerMain(modifier: Modifier = Modifier) {
                     fontWeight = FontWeight.SemiBold,
                     color = putih,
                     fontSize = 12.sp,
+                    lineHeight = 15.sp,
                     letterSpacing = 1.sp
+
                 )
                 Text(
                     text = stringResource(id = R.string.baris3),
                     fontFamily = poppinsFamily,
                     fontWeight = FontWeight.Normal,
                     color = putih,
+                    lineHeight = 15.sp,
                     fontSize = 12.sp,
                 )
             }
