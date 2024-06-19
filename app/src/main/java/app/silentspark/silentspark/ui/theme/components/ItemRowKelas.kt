@@ -25,8 +25,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
-import app.silentspark.silentspark.ui.theme.theme.KuningMuda
-import app.silentspark.silentspark.ui.theme.theme.PurpleGrey80
 import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 import app.silentspark.silentspark.ui.theme.theme.poppinsFamily
 import app.silentspark.silentspark.ui.theme.theme.putih
