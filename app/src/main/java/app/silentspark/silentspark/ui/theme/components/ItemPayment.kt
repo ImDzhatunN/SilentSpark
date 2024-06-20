@@ -1,6 +1,6 @@
 package app.silentspark.silentspark.ui.theme.components
 
-import App.SilentSpark.silentspark.R
+import app.silentspark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -16,12 +16,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import app.silentspark.silentspark.ui.theme.theme.Hijau
 import app.silentspark.silentspark.ui.theme.theme.poppinsFamily
 import app.silentspark.silentspark.ui.theme.theme.putih
 
@@ -33,7 +33,7 @@ fun ItemPayment(
         modifier = modifier
             .clip(RoundedCornerShape(16.dp))
             .fillMaxWidth()
-            .background(color = Hijau)
+            .background(color = colorResource(id = R.color.green))
     ) {
         Column(modifier.padding(start = 24.dp, top = 16.dp, bottom = 16.dp, end = 24.dp)) {
             Text(

@@ -1,12 +1,13 @@
 package app.silentspark.silentspark.ui.theme.screen
 
-import App.SilentSpark.silentspark.R
+import app.silentspark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -22,7 +23,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -30,7 +32,7 @@ import app.silentspark.silentspark.dummy.DataDummy
 import app.silentspark.silentspark.model.Course
 import app.silentspark.silentspark.state.UiState
 import app.silentspark.silentspark.ui.theme.components.BannerMain
-import app.silentspark.silentspark.ui.theme.components.ItemRowBeranda
+import app.silentspark.silentspark.ui.theme.components.ItemBeranda
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.viewmodel.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
@@ -84,32 +86,59 @@ fun BerandaSiswaContent(
                 alignment = Alignment.Center,
             )
             Column( modifier = Modifier.padding(start = 8.dp)) {
-                Text(text = nama, fontWeight = FontWeight.Bold )
-                Text(text = "Siswa")
+                Text(
+                    text = nama,
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                    fontSize = 14.sp,
+                    color = Coklat)
+
+                Text(
+                    text = "Siswa",
+                    fontFamily = FontFamily(Font(R.font.poppins_regular)),
+                    fontSize = 14.sp,
+                    color = Coklat)
+
             }
             Spacer(modifier = Modifier.weight(1f))
 
-            Image(painter = painterResource(id = R.drawable.ic_notif), contentDescription = "notification")
+            Image(
+                painter = painterResource(id = R.drawable.ic_notif),
+                contentDescription = "notification")
         }
 
         Row(modifier = Modifier.padding(top = 16.dp)) {
-            Text(text = stringResource(id = R.string.say_hi, nama))
+            Text(
+                text = stringResource(id = R.string.say_hi, nama),
+                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                    fontSize = 14.sp,
+                    color = Coklat
+            )
             Image(painter = painterResource(id = R.drawable.ic_say_hi), contentDescription = "Icon say hi", modifier = Modifier.padding(start = 8.dp))
         }
 
         BannerMain(modifier = Modifier
             .align(Alignment.CenterHorizontally)
-            .padding(top = 16.dp))
+            .padding(top = 8.dp))
 
-        Text(text = stringResource(id = R.string.text_nav_main), color = Coklat , fontWeight = FontWeight.SemiBold, fontSize = 12.sp, modifier = Modifier
+        Text(text = stringResource(id = R.string.text_nav_main),
+            color = Coklat ,
+            fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+            fontSize = 14.sp,
+            modifier = Modifier
             .padding(top = 16.dp)
             .align(Alignment.CenterHorizontally))
 
         LazyColumn {
             items(listCourse) { course ->
-                ItemRowBeranda(image = course.image, title = course.title, desc = course.desc, price = course.price, modifier = Modifier.padding(top = 16.dp).clickable {
-
-                })
+                ItemBeranda(image = course.image,
+                    title = course.title,
+                    desc = course.desc,
+                    price = course.price,
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(8.dp)
+                        .clickable { })
+                Spacer(modifier = Modifier.height(8.dp))
             }
         }
     }
