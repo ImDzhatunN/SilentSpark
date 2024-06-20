@@ -47,7 +47,7 @@ fun TentangKamiScreen(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = painterResource(R.drawable.ic_back),
+                painter = painterResource(R.drawable.ic_back_topbar),
                 contentDescription = "Back Icon",
                 modifier = Modifier
                     .size(24.dp)
@@ -90,14 +90,7 @@ fun TentangKamiScreen(
         // Image Grid
         GridImages(
             images = listOf(
-                R.drawable.image1,
-                R.drawable.image2,
-                R.drawable.image3,
-                R.drawable.image4,
-                R.drawable.image5,
-                R.drawable.image6,
-                R.drawable.image7,
-                R.drawable.image8
+                R.drawable.image12_
             ),
             modifier = Modifier
                 .fillMaxWidth()
@@ -155,7 +148,6 @@ fun GridImages(
                 contentDescription = null,
                 modifier = Modifier
                     .padding(8.dp)
-                    .clip(RoundedCornerShape(8.dp))
                     .fillMaxSize(),
                 contentScale = ContentScale.Crop
             )

@@ -11,12 +11,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import app.silentspark.silentspark.R
 
 @Composable
 fun AccountScreen(
     modifier: Modifier = Modifier,
-    onBackClick: () -> Unit = {},
+    onBackClick: () -> Unit = {}
 ) {
     Column(
         Modifier
@@ -30,9 +29,9 @@ fun AccountScreen(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            IconButton(onClick = { /* Handle back button click */ }) {
+            IconButton(onClick = onBackClick) {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_arrow_back),
+                    painter = painterResource(id = R.drawable.back),
                     contentDescription = "Back"
                 )
             }
@@ -43,8 +42,7 @@ fun AccountScreen(
                 fontWeight = FontWeight.Bold
             )
 
-            // Placeholder for additional action or empty space
-            Spacer(modifier = Modifier.width(48.dp))
+            Spacer(modifier = Modifier.width(48.dp)) // Placeholder for additional action or empty space
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -67,74 +65,12 @@ fun AccountScreen(
                     .size(32.dp)
             ) {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_camera),
+                    painter = painterResource(id = drawable.rectangle_11siswaprofile),
                     contentDescription = "Change Profile Picture"
                 )
             }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Button(
-            onClick = { /* Handle profile button click */ },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Profile")
-        }
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Button(
-            onClick = { /* Handle about us button click */ },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Tentang Kami")
-        }
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Button(
-            onClick = { /* Handle logout button click */ },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Keluar")
-        }
-
-        Spacer(modifier = Modifier.weight(1f))
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceAround,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            IconButton(onClick = { /* Handle beranda button click */ }) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_home),
-                    contentDescription = "Beranda"
-                )
-            }
-
-            IconButton(onClick = { /* Handle jadwal button click */ }) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_calendar),
-                    contentDescription = "Jadwal"
-                )
-            }
-
-            IconButton(onClick = { /* Handle laporan button click */ }) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_report),
-                    contentDescription = "Laporan"
-                )
-            }
-
-            IconButton(onClick = { /* Handle akun button click */ }) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_account),
-                    contentDescription = "Akun"
-                )
-            }
-        }
     }
 }
 
