@@ -16,7 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -33,7 +33,7 @@ fun AnumDetails(
         modifier = modifier
             .clip(RoundedCornerShape(16.dp))
             .fillMaxWidth()
-            .background(color = colorResource(id = R.color.green))
+            .background(color = Color.Green)
     ) {
         Column(modifier.padding(start = 24.dp, top = 16.dp, bottom = 16.dp, end = 24.dp)) {
             Text(

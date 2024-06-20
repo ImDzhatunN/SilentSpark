@@ -1,6 +1,6 @@
 package app.silentspark.silentspark.ui.theme.screen
 
-import App.SilentSpark.silentspark.R
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -21,6 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.components.CompDetailPesanan
 import app.silentspark.silentspark.ui.theme.theme.poppinsFamily
 
