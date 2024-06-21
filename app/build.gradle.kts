@@ -77,8 +77,8 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.koin.androidx.compose)
-    implementation (libs.androidx.navigation.compose)
-    implementation (libs.androidx.material.icons.extended)
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation ("androidx.compose.material:material-icons-extended:1.3.1")
 }
 
 

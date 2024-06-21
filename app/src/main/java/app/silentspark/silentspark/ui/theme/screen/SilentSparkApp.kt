@@ -55,9 +55,9 @@ fun SilentSparkApp(
                 PesananSiswa()
             }
 
-            composable(Screen.Akun.route) {
-                AkunSiswa()
-            }
+//            composable(Screen.Akun.route) {
+//                AkunSiswa()
+ //           }
         }
     }
 }
