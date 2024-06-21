@@ -1,13 +1,12 @@
 package app.silentspark.silentspark.navigation
 
-
 import app.silentspark.silentspark.R
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.ReceiptLong
-import androidx.compose.material.icons.filled.Tab
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -50,6 +49,7 @@ fun SilentSparkApp(
             navController = navController,
             startDestination = Screen.Login.route,
             modifier = modifier.padding(contentPadding)
+
         ) {
             composable(Screen.Login.route) {
                 LoginScreen(navController = navController)
@@ -65,10 +65,7 @@ fun SilentSparkApp(
             composable("kelas") {
                 KelasScreen(navController = navController)
             }
-
-            composable("kelas_screen") {
-                KelasScreen(navController = navController)
-            }
+            
             composable(
                 route = "detail_kelas_screen/{kelasId}",
                 arguments = listOf(navArgument("kelasId") { type = NavType.IntType })
@@ -77,15 +74,10 @@ fun SilentSparkApp(
                 DetailKelasScreen(navController = navController, kelasId = kelasId)
             }
 
-
-
-
-
-
-
             composable(Screen.Akun.route) {
                 AkunScreen(navController = navController)
            }
+
         }
     }
 }
@@ -109,12 +101,12 @@ private fun BottomBar(
             ),
             NavigationItem(
                 title = stringResource(id = R.string.menu_kelas),
-                icon = Icons.Default.Tab,
+                icon = Icons.Default.DateRange,
                 screen = Screen.Kelas
             ),
             NavigationItem(
                 title = stringResource(id = R.string.menu_pesanan),
-                icon = Icons.Filled.ReceiptLong,
+                icon = Icons.Filled.ShoppingCart,
                 screen = Screen.Pesanan
             ),
             NavigationItem(

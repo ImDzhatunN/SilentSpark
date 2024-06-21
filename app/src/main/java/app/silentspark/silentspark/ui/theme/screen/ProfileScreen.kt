@@ -23,15 +23,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.silentspark.silentspark.R
-import app.silentspark.silentspark.ui.theme.components.ButtonNext
+import app.silentspark.silentspark.ui.theme.components.ButtonSimpan
 import app.silentspark.silentspark.ui.theme.components.DataLengkapiProfilesiswa
-import app.silentspark.silentspark.ui.theme.components.PhotoPicker
 import app.silentspark.silentspark.ui.theme.components.SiswaLengkapiProfileItem
 import app.silentspark.silentspark.ui.theme.theme.ijolumut
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SiswaLengkapiProfileScreen() {
+fun ProfileScreen() {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -49,7 +48,7 @@ fun SiswaLengkapiProfileScreen() {
                         Spacer(modifier = Modifier.width(8.dp))
 
                         Text(
-                            text = "Lengkapi Profile Anda",
+                            text = "Profile",
                             style = MaterialTheme.typography.titleSmall.copy(
                                 color = ijolumut,
                                 fontFamily = FontFamily(Font(R.font.poppins_bold))
@@ -73,12 +72,8 @@ fun SiswaLengkapiProfileScreen() {
             ) {
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.spacedBy(0.dp)
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    item {
-                        PhotoPicker()
-                        Spacer(modifier = Modifier.height(20.dp))
-                    }
                     item {
                         Text(
                             text = "Informasi Lengkap",
@@ -100,8 +95,8 @@ fun SiswaLengkapiProfileScreen() {
                                 .fillMaxWidth()
                                 .padding(8.dp)
                         ) {
-                            ButtonNext(
-                                text = "Selanjutnya",
+                            ButtonSimpan(
+                                text = "Simpan",
                                 onClick = {
                                 },
                                 modifier = Modifier.align(Alignment.CenterHorizontally)
@@ -116,6 +111,6 @@ fun SiswaLengkapiProfileScreen() {
 
 @Preview(showBackground = true)
 @Composable
-fun SiswaLengkapiProfileScreenPreview() {
-    SiswaLengkapiProfileScreen()
+fun ProfileScreenPreview() {
+    ProfileScreen()
 }
