@@ -82,7 +82,7 @@ private fun BottomBar(
             ),
             NavigationItem(
                 title = stringResource(id = R.string.menu_kelas),
-                icon = Icons.Default.T,
+                icon = Icons.Default.Tab,
                 screen = Screen.Kelas
             ),
             NavigationItem(
