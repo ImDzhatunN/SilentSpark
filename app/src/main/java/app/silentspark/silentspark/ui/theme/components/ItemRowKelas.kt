@@ -25,7 +25,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
@@ -40,7 +39,7 @@ fun ItemRowKelas(
     statusColour: Color,
     textColor: Color,
     kelas: Kelas,
-    onClick: () -> Unit = {} // Add onClick parameter to handle click events
+    onClick: () -> Unit = {}
 ) {
     Box(
         modifier = modifier
@@ -49,7 +48,7 @@ fun ItemRowKelas(
                 Color(0xFF67725F).copy(alpha = 0.15f),
                 shape = RoundedCornerShape(15.dp)
             )
-            .clickable(onClick = onClick) // Trigger onClick event
+            .clickable(onClick = onClick)
     ) {
         Row {
             Image(

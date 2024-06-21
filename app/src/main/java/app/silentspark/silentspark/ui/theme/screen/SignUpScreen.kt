@@ -22,15 +22,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.ui.theme.theme.Green
 import app.silentspark.silentspark.ui.theme.theme.putih
 import app.silentspark.silentspark.ui.theme.components.BoxSingUp
 
 @Composable
 fun SignUpScreen (
+    navController: NavHostController,
     modifier: Modifier =Modifier
 ) {
     Column(
@@ -107,13 +108,9 @@ fun SignUpScreen (
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter
     ) {
-        BoxSingUp()
+        BoxSingUp(navController = navController)
     }
 }
 
 
-@Composable
-@Preview(showBackground = true)
-fun PreviewSignUpScreen() {
-    SignUpScreen()
-}
+

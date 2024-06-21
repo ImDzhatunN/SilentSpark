@@ -28,12 +28,10 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import app.silentspark.silentspark.ui.theme.screen.AkunScreen
 import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaScreen
-import app.silentspark.silentspark.ui.theme.screen.DaftarPesanan
 import app.silentspark.silentspark.ui.theme.screen.DetailKelasScreen
 import app.silentspark.silentspark.ui.theme.screen.KelasScreen
-
 import app.silentspark.silentspark.ui.theme.screen.LoginScreen
-import app.silentspark.silentspark.ui.theme.screen.TandaTerimaScreen
+import app.silentspark.silentspark.ui.theme.screen.SignUpScreen
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.KuningMuda
 
@@ -55,6 +53,9 @@ fun SilentSparkApp(
         ) {
             composable(Screen.Login.route) {
                 LoginScreen(navController = navController)
+            }
+            composable(Screen.SignUp.route) {
+                SignUpScreen(navController = navController)
             }
 
             composable(Screen.Home.route) {
