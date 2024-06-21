@@ -55,6 +55,7 @@ fun Tugas(
     namatugas : String,
     desctugas : String,
     text:String,
+    nilai:String,
     setText: (String) -> Unit
 
     )
@@ -247,7 +248,7 @@ fun Tugas(
                 verticalAlignment = Alignment.CenterVertically
             ){
                 OutlinedTextField(
-                    value = text,
+                    value = nilai,
                     onValueChange = setText,
                     textStyle = TextStyle(
                         fontSize = 14.sp,
@@ -267,7 +268,7 @@ fun Tugas(
                     Button(
                         onClick = { /* Handle login click */ },
                         colors = ButtonDefaults.buttonColors(containerColor = KuningMuda),
-                        shape = RoundedCornerShape(size = 6.dp),
+                        shape = RoundedCornerShape(size = 8.dp),
                         modifier = modifier
                             .width(140.dp)
                             .height(50.dp)
@@ -294,6 +295,7 @@ private fun Preview() {
         var textState by remember { mutableStateOf("Link") }
         Tugas(
             text = "Link",
+            nilai = "Link",
             setText = {newText -> textState = newText},
             namatugas = "Tugas 1",
             desctugas = stringResource(id = R.string.lorem)

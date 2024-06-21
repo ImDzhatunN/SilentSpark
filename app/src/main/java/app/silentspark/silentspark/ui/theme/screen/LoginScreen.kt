@@ -24,12 +24,14 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.ui.theme.components.BoxLogin
 import app.silentspark.silentspark.ui.theme.theme.Green
 import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
 fun LoginScreen (
+    navController: NavHostController,
     modifier: Modifier = Modifier,
 
     ) {
@@ -108,14 +110,10 @@ fun LoginScreen (
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter
     ) {
-        BoxLogin()
+        BoxLogin(navController = navController)
     }
 }
 
 
-@Composable
-@Preview(showBackground = true)
-fun PreviewLoginScreen() {
-    LoginScreen()
-}
+
 

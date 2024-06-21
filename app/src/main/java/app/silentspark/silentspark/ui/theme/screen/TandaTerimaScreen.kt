@@ -24,6 +24,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.dummy.DataDummy
 import app.silentspark.silentspark.model.KeteranganPesanan
@@ -34,6 +35,7 @@ import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TandaTerimaScreen(
+    navController: NavHostController,
     modifier: Modifier = Modifier,
     tandaterima: List<KeteranganPesanan> = emptyList(),
     onBackClick: () -> Unit = {}
@@ -52,10 +54,9 @@ fun TandaTerimaScreen(
                             modifier = modifier
                                 .width(38.dp)
                                 .height(39.dp)
-                                .clickable { onBackClick() }
+                                .clickable { navController.popBackStack() }
                         )
-                        Spacer(modifier = modifier
-                                .weight(1f))
+                        Spacer(modifier = modifier.weight(1f))
                         Text(
                             text = "Tanda Terima",
                             style = TextStyle(
@@ -63,8 +64,7 @@ fun TandaTerimaScreen(
                                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                                 color = Green
                             ),
-                            modifier = modifier
-                                .padding(end = 16.dp)
+                            modifier = modifier.padding(end = 16.dp)
                         )
                     }
                 },
@@ -90,8 +90,7 @@ fun TandaTerimaScreen(
                             sesi = pesanan.sesi,
                             metodepembayaran = pesanan.metodepembayaran,
                             status = pesanan.status,
-                            total = pesanan.total,
-
+                            total = pesanan.total
                         )
                     }
                 }
@@ -100,10 +99,3 @@ fun TandaTerimaScreen(
     )
 }
 
-@Preview(showSystemUi = true)
-@Composable
-private fun TandaTerimaScreenPreview() {
-    SilentSparkTheme {
-        TandaTerimaScreen(tandaterima = DataDummy.listKeteranganPesanan)
-    }
-}

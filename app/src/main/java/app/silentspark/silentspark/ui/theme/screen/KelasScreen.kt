@@ -24,24 +24,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.dummy.DataKelas
 import app.silentspark.silentspark.model.Kelas
 import app.silentspark.silentspark.ui.theme.components.ItemRowKelas
 import app.silentspark.silentspark.ui.theme.theme.Green
-import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun KelasScreen(
+    navController: NavHostController,
     modifier: Modifier = Modifier,
-    listkelas: List<Kelas> = emptyList(),
+    listkelas: List<Kelas> = DataKelas.listKelas,
     onBackClick: () -> Unit = {},
 ) {
-
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -60,7 +59,7 @@ fun KelasScreen(
                         )
                         Spacer(modifier = modifier.weight(1f))
                         Text(
-                            text = "Daftar Pesanan",
+                            text = "Kelas",
                             style = TextStyle(
                                 fontSize = 16.sp,
                                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
@@ -80,29 +79,20 @@ fun KelasScreen(
             ) {
                 LazyColumn(
                     modifier = modifier.padding(8.dp)
-                ){
-                    items(listkelas, key = {it.id}) {
-                        ItemRowKelas (kelas = it, statusColour = if (it.status=="Sedang Berlangsung") Color(0xFFBBA661).copy(alpha = 0.25f) else Color(0xFF67725F).copy(alpha = 0.25f),
-                            textColor = if (it.status=="Sedang Berlangsung") Color(0xFFAC9062) else Color(0xFF67725F)
+                ) {
+                    items(listkelas, key = { it.id }) { kelas ->
+                        ItemRowKelas(
+                            kelas = kelas,
+                            statusColour = if (kelas.status == "Sedang Berlangsung") Color(0xFFBBA661).copy(alpha = 0.25f) else Color(0xFF67725F).copy(alpha = 0.25f),
+                            textColor = if (kelas.status == "Sedang Berlangsung") Color(0xFFAC9062) else Color(0xFF67725F),
+                            modifier = Modifier.clickable {
+                                navController.navigate("detail_kelas_screen/${kelas.id}")
+                            }
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                     }
-
                 }
-
-
             }
         }
     )
 }
-
-
-@Preview(showSystemUi = true)
-@Composable
-private fun KelasScreenPreview() {
-    SilentSparkTheme {
-        KelasScreen(listkelas = DataKelas.listKelas)
-    }
-}
-
-

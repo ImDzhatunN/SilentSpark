@@ -40,6 +40,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.ui.theme.theme.AbuBiruTua
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.Coklat
@@ -48,7 +49,9 @@ import app.silentspark.silentspark.ui.theme.theme.putih
 
 
 @Composable
-fun BoxLogin(modifier: Modifier = Modifier) {
+fun BoxLogin(
+    navController: NavHostController,
+    modifier: Modifier = Modifier) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var rememberMe by remember { mutableStateOf(false) }
@@ -159,7 +162,7 @@ fun BoxLogin(modifier: Modifier = Modifier) {
                 contentAlignment = Alignment.Center
             ) {
                 Button(
-                    onClick = { /* Handle login click */ },
+                    onClick ={ navController.navigate("home") },
                     colors = ButtonDefaults.buttonColors(containerColor = Coklat),
                     shape = RoundedCornerShape(size = 6.dp),
                     modifier = modifier
@@ -236,10 +239,3 @@ fun BoxLogin(modifier: Modifier = Modifier) {
 }
 
 
-@Composable
-@Preview
-private fun Preview() {
-    SilentSparkTheme {
-        BoxLogin()
-    }
-}

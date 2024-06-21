@@ -28,6 +28,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.dummy.DataDummy
 import app.silentspark.silentspark.model.Course
 import app.silentspark.silentspark.state.UiState
@@ -39,6 +40,7 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun BerandaSiswaScreen(
+    navController: NavHostController,
     viewModel: HomeViewModel = koinViewModel()
 ){
 

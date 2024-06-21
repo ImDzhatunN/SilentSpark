@@ -44,7 +44,7 @@ fun Hubungi(
     Box(
         modifier = modifier
             .width(360.dp)
-            .height(220.dp)
+            .height(250.dp)
             .background(
                 Color(0xFF67725F).copy(alpha = 0.15f),
                 shape = RoundedCornerShape(25.dp)
@@ -66,7 +66,6 @@ fun Hubungi(
                 fontSize = 14.sp,
                 textAlign = TextAlign.Justify,
                 fontFamily = FontFamily(Font(R.font.poppins_regular)),
-                modifier = Modifier.padding(bottom = 8.dp),
             )
             Box(
                 modifier = modifier.fillMaxWidth(),
@@ -81,7 +80,6 @@ fun Hubungi(
                     modifier = modifier
                         .width(170.dp)
                         .height(46.dp)
-                        .padding(vertical = 5.dp)
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Whatsapp,
@@ -92,21 +90,17 @@ fun Hubungi(
                             .clickable {  }
 
                     )
-                    Spacer(modifier = modifier.width(8.dp))
                     Text(
                         text = "WhatsApp",
                         fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                         color = putih,
                         fontSize = 12.sp,
-
-
                         )
                 }
             }
-            Spacer(modifier = modifier.height(8.dp))
 
             Text(
-                text = "Hubungi",
+                text = "Ulasan",
                 color = Coklat,
                 fontSize = 16.sp,
                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
@@ -133,10 +127,6 @@ fun Hubungi(
                         .padding(9.dp)
                 )
             }
-
-
-
-
         }
     }
 }

@@ -29,7 +29,9 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.R
+import app.silentspark.silentspark.dummy.DataKelas
 import app.silentspark.silentspark.ui.theme.components.detailkelas.AksesKelas
 import app.silentspark.silentspark.ui.theme.components.detailkelas.Hubungi
 import app.silentspark.silentspark.ui.theme.components.detailkelas.TentangGuru
@@ -40,9 +42,13 @@ import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailKelasScreen(
+    navController: NavHostController,
+    kelasId: Int,
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit = {},
 ) {
+    val kelas = DataKelas.listKelas.firstOrNull { it.id == kelasId }
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -57,7 +63,7 @@ fun DetailKelasScreen(
                             modifier = modifier
                                 .width(38.dp)
                                 .height(39.dp)
-                                .clickable { onBackClick() }
+                                .clickable { navController.popBackStack() }
                         )
                         Spacer(modifier = modifier.weight(1f))
                         Text(
@@ -74,97 +80,94 @@ fun DetailKelasScreen(
             )
         },
         content = { paddingValues ->
-            LazyColumn(
-                modifier = modifier
-                    .fillMaxSize()
-                    .padding(paddingValues)
-            ) {
-                item {
-                    Box(
-                        modifier = modifier
-                            .fillMaxWidth(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Image(
-                            painter = painterResource(R.drawable.teacher),
-                            contentDescription = "",
-                            modifier = Modifier
-                                .padding(8.dp)
-                                .height(160.dp)
-                                .width(180.dp)
-                                .clip(RoundedCornerShape(7.dp)),
-                            contentScale = ContentScale.Crop
-                        )
-                    }
-                }
-                item{
-                    Box(
+            if (kelas != null) {
+                LazyColumn(
                     modifier = modifier
-                        .fillMaxWidth(),
-                    contentAlignment = Alignment.Center
-                )
-                    {
-                        TentangGuru(
-                            name = "Bianca Savador",
-                            date = " 15 Mei 2024",
-                            bahasa = "Indonesia | English",
-                            sesi = "Sedang Berlangsung",
+                        .fillMaxSize()
+                        .padding(paddingValues)
+                ) {
+                    item {
+                        Box(
                             modifier = modifier
-                                .padding(10.dp)
-                        )
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Image(
+                                painter = painterResource(kelas.image),
+                                contentDescription = "",
+                                modifier = Modifier
+                                    .padding(8.dp)
+                                    .height(160.dp)
+                                    .width(180.dp)
+                                    .clip(RoundedCornerShape(7.dp)),
+                                contentScale = ContentScale.Crop
+                            )
+                        }
                     }
-                }
-                item{
-                    Box(
-                        modifier = modifier
-                            .fillMaxWidth(),
-                        contentAlignment = Alignment.Center
-                    ){
-                        AksesKelas(
-                            topik = "Memahami macam isyarat (Isyando, ASL, BISINDO",
-                            linkzoom = "https://us06web.zoom.us/j/89554588370?pwd=fQTIuqCON8Y3AIjo9gGxyRpkMeFOt0.1",
+                    item {
+                        Box(
                             modifier = modifier
-                                .padding(8.dp)
-                        )
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            TentangGuru(
+                                name = kelas.title,
+                                date = kelas.desc,
+                                bahasa = "Indonesia | English",
+                                sesi = kelas.status,
+                                modifier = modifier
+                                    .padding(8.dp)
+                            )
+                        }
                     }
-                }
-                item {
-                    Box(
-                        modifier = modifier
-                            .fillMaxWidth(),
-                        contentAlignment = Alignment.Center
-                    ){
-                        Tugas(
-                            namatugas = "Tugas 1",
-                            desctugas = stringResource(id = R.string.lorem),
-                            text = "Link",
-                            setText = {}
-                        )
-                    }
-                }
-                item {
-                    Box(
-                        modifier = modifier
-                            .fillMaxWidth(),
-                        contentAlignment = Alignment.Center
-                    ){
-                        Hubungi(
-                            email = "biancasavador@gmail.com",
+                    item {
+                        Box(
                             modifier = modifier
-                                .padding(8.dp)
-                        )
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            AksesKelas(
+                                topik = "Memahami macam isyarat (Isyando, ASL, BISINDO",
+                                linkzoom = "https://us06web.zoom.us/j/89554588370?pwd=fQTIuqCON8Y3AIjo9gGxyRpkMeFOt0.1",
+                                modifier = modifier
+                                    .padding(8.dp)
+                            )
+                        }
                     }
+                    item {
+                        Box(
+                            modifier = modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Tugas(
+                                namatugas = "Tugas 1",
+                                desctugas = stringResource(id = R.string.lorem),
+                                text = "Link",
+                                nilai = "nilai",
+                                setText = {}
+                            )
+                        }
+                    }
+                    item {
+                        Box(
+                            modifier = modifier
+                                .fillMaxWidth(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Hubungi(
+                                email = "biancasavador@gmail.com",
+                                modifier = modifier
+                                    .padding(8.dp)
+                            )
 
+                        }
+                    }
                 }
             }
         }
     )
 }
 
-@Preview(showSystemUi = true)
-@Composable
-private fun DetailKelasScreenPreview() {
-    SilentSparkTheme {
-        DetailKelasScreen()
-    }
-}
+
