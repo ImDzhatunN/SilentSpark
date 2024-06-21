@@ -44,7 +44,6 @@ fun BoxItemDaftarPesanan(
             .height(95.dp)
             .border(width = 0.1.dp, color = AbuabuMuda)
             .background(color = putih)
-
     ) {
         Row {
             Image(
@@ -56,8 +55,7 @@ fun BoxItemDaftarPesanan(
                     .size(38.dp)
             )
 
-            Column(modifier = modifier.padding(top = 14.dp, end = 92.dp))
-            {
+            Column(modifier = modifier.padding(top = 14.dp, end = 92.dp)) {
                 Text(
                     text = pesanan.date,
                     fontFamily = FontFamily(Font(R.font.poppins_regular)),
@@ -79,9 +77,8 @@ fun BoxItemDaftarPesanan(
                     fontSize = 13.sp,
                     letterSpacing = 0.2.sp
                 )
-
             }
-            Spacer( modifier = modifier.height(8.dp))
+            Spacer(modifier = modifier.height(8.dp))
 
             Box(
                 modifier = Modifier
@@ -98,7 +95,8 @@ fun BoxItemDaftarPesanan(
                         .height(30.dp)
                 ) {
                     Text(
-                        text = pesanan.status, color = textColor,
+                        text = pesanan.status,
+                        color = textColor,
                         fontSize = 12.sp,
                         fontFamily = FontFamily(Font(R.font.poppins_semibold))
                     )

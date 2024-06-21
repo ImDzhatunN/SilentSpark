@@ -29,6 +29,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.Green
@@ -37,6 +38,7 @@ import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AkunScreen(
+    navController: NavHostController,
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit = {},
 ) {
@@ -155,10 +157,3 @@ fun AkunScreen(
 }
 
 
-@Preview(showSystemUi = true)
-@Composable
-private fun AkunScreenPreview() {
-    SilentSparkTheme {
-       AkunScreen()
-    }
-}

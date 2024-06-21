@@ -3,6 +3,7 @@ package app.silentspark.silentspark.ui.theme.components
 import app.silentspark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -38,7 +39,8 @@ fun ItemRowKelas(
     modifier: Modifier = Modifier,
     statusColour: Color,
     textColor: Color,
-    kelas: Kelas
+    kelas: Kelas,
+    onClick: () -> Unit = {} // Add onClick parameter to handle click events
 ) {
     Box(
         modifier = modifier
@@ -47,18 +49,17 @@ fun ItemRowKelas(
                 Color(0xFF67725F).copy(alpha = 0.15f),
                 shape = RoundedCornerShape(15.dp)
             )
-
+            .clickable(onClick = onClick) // Trigger onClick event
     ) {
         Row {
             Image(
-                painter = painterResource(R.drawable.teacher),
+                painter = painterResource(kelas.image),
                 contentDescription = "",
                 modifier = modifier
                     .size(width = 90.dp, height = 75.dp)
                     .padding(start = 16.dp)
                     .align(Alignment.CenterVertically)
                     .clip(RoundedCornerShape(7.dp)),
-
                 contentScale = ContentScale.Crop
             )
 
@@ -100,18 +101,19 @@ fun ItemRowKelas(
                             .height(35.dp)
                     ) {
                         Text(
-                            text = kelas.status, color = textColor,
+                            text = kelas.status,
+                            color = textColor,
                             fontSize = 12.sp,
                             fontFamily = FontFamily(Font(R.font.poppins_semibold))
                         )
                     }
                 }
             }
-            Spacer( modifier = modifier.weight(10f))
+            Spacer(modifier = modifier.weight(10f))
             Box(
                 modifier = Modifier
                     .fillMaxHeight(),
-            ){
+            ) {
                 Image(
                     alignment = Alignment.Center,
                     painter = painterResource(id = R.drawable.ic_arrowback),
@@ -124,4 +126,3 @@ fun ItemRowKelas(
         }
     }
 }
-

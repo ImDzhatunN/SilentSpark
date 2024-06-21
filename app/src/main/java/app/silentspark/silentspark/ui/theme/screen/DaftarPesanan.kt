@@ -31,6 +31,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.dummy.DataDummy
 import app.silentspark.silentspark.model.Pesanan
 import app.silentspark.silentspark.ui.theme.components.BoxItemDaftarPesanan
@@ -42,12 +43,12 @@ import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DaftarPesanan(
+    navController: NavHostController,
     modifier: Modifier = Modifier,
     listPesan: List<Pesanan> = emptyList(),
     onBackClick: () -> Unit = {},
 ) {
     val query by remember { mutableStateOf("") }
-    var active by remember { mutableStateOf(false) }
     val filteredList = listPesan.filter {
         it.desc.contains(query, ignoreCase = true)
     }
@@ -100,7 +101,7 @@ fun DaftarPesanan(
                             style = TextStyle(
                                 fontSize = 22.sp,
                                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
-                                color = Coklat// Gunakan warna coklat yang sesuai
+                                color = Coklat
                             ),
                             modifier = Modifier.padding(start = 24.dp, top = 16.dp)
                         )
@@ -109,7 +110,10 @@ fun DaftarPesanan(
                         BoxItemDaftarPesanan(
                             pesanan = pesanan,
                             statusColour = if (pesanan.status == "Belum Lunas") Color(0xFFBBA661).copy(alpha = 0.25f) else Color(0xFF67725F).copy(alpha = 0.25f),
-                            textColor = if (pesanan.status == "Belum Lunas") Color(0xFFAC9062) else Color(0xFF67725F)
+                            textColor = if (pesanan.status == "Belum Lunas") Color(0xFFAC9062) else Color(0xFF67725F),
+                            modifier = Modifier.clickable {
+                                navController.navigate("tanda_terima/${pesanan.id}")
+                            }
                         )
                     }
                     item {
@@ -127,20 +131,14 @@ fun DaftarPesanan(
                         BoxItemDaftarPesanan(
                             pesanan = pesanan,
                             statusColour = if (pesanan.status == "Belum Lunas") Color(0xFFBBA661).copy(alpha = 0.25f) else Color(0xFF67725F).copy(alpha = 0.25f),
-                            textColor = if (pesanan.status == "Belum Lunas") Color(0xFFAC9062) else Color(0xFF67725F)
+                            textColor = if (pesanan.status == "Belum Lunas") Color(0xFFAC9062) else Color(0xFF67725F),
+                            modifier = Modifier.clickable {
+                                navController.navigate("tanda_terima/${pesanan.id}")
+                            }
                         )
                     }
                 }
             }
         }
     )
-}
-
-
-@Preview(showSystemUi = true)
-@Composable
-private fun DaftarPesananPreview() {
-    SilentSparkTheme {
-        DaftarPesanan(listPesan = DataDummy.listPesanan)
-    }
 }

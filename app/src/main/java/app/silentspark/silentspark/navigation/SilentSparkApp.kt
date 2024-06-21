@@ -20,13 +20,22 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import app.silentspark.silentspark.ui.theme.screen.AkunScreen
 import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaScreen
-import app.silentspark.silentspark.ui.theme.screen.KelasSiswa
-import app.silentspark.silentspark.ui.theme.screen.PesananSiswa
+import app.silentspark.silentspark.ui.theme.screen.DaftarPesanan
+import app.silentspark.silentspark.ui.theme.screen.DetailKelasScreen
+import app.silentspark.silentspark.ui.theme.screen.KelasScreen
+
+import app.silentspark.silentspark.ui.theme.screen.LoginScreen
+import app.silentspark.silentspark.ui.theme.screen.TandaTerimaScreen
+import app.silentspark.silentspark.ui.theme.theme.Abuabu
+import app.silentspark.silentspark.ui.theme.theme.KuningMuda
 
 @Composable
 fun SilentSparkApp(
@@ -41,24 +50,41 @@ fun SilentSparkApp(
     ) { contentPadding ->
         NavHost(
             navController = navController,
-            startDestination = Screen.Home.route,
+            startDestination = Screen.Login.route,
             modifier = modifier.padding(contentPadding)
         ) {
+            composable(Screen.Login.route) {
+                LoginScreen(navController = navController)
+            }
+
             composable(Screen.Home.route) {
-                BerandaSiswaScreen()
+                BerandaSiswaScreen(navController = navController)
             }
 
-            composable(Screen.Kelas.route) {
-                KelasSiswa()
+            composable("kelas") {
+                KelasScreen(navController = navController)
             }
 
-            composable(Screen.Pesanan.route) {
-                PesananSiswa()
+            composable("kelas_screen") {
+                KelasScreen(navController = navController)
+            }
+            composable(
+                route = "detail_kelas_screen/{kelasId}",
+                arguments = listOf(navArgument("kelasId") { type = NavType.IntType })
+            ) { backStackEntry ->
+                val kelasId = backStackEntry.arguments?.getInt("kelasId") ?: 0
+                DetailKelasScreen(navController = navController, kelasId = kelasId)
             }
 
-//            composable(Screen.Akun.route) {
-//                AkunSiswa()
- //           }
+
+
+
+
+
+
+            composable(Screen.Akun.route) {
+                AkunScreen(navController = navController)
+           }
         }
     }
 }
@@ -96,9 +122,11 @@ private fun BottomBar(
                 screen = Screen.Akun
             )
         )
+
         navigationItems.map { item ->
+            val isSelected = currentRoute == item.screen.route
             NavigationBarItem(
-                selected = currentRoute == item.screen.route,
+                selected = isSelected,
                 onClick = {
                     navController.navigate(item.screen.route) {
                         popUpTo(navController.graph.findStartDestination().id) {
@@ -108,8 +136,19 @@ private fun BottomBar(
                         launchSingleTop = true
                     }
                 },
-                icon = { Icon(imageVector = item.icon, contentDescription = item.title) },
-                label = { Text(text = item.title) }
+                icon = {
+                    Icon(
+                        imageVector = item.icon,
+                        contentDescription = item.title,
+                        tint = if (isSelected) KuningMuda else Abuabu
+                    )
+                },
+                label = {
+                    Text(
+                        text = item.title,
+                        color = if (isSelected) KuningMuda else Abuabu
+                    )
+                }
             )
         }
     }
