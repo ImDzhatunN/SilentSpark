@@ -17,8 +17,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.Coklat
+import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
 fun ButtonLihat_Kelas(
@@ -43,7 +43,7 @@ fun ButtonLihat_Kelas(
                 fontSize = 12.sp,
                 lineHeight = 28.sp,
                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
-                color = Abuabu,
+                color = putih,
                 textAlign = TextAlign.Right,),
             modifier = Modifier.align(Alignment.CenterVertically)
         )

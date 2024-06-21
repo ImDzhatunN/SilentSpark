@@ -16,30 +16,30 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-@Composable
-fun RatingBar(rating: Int, onRatingChanged: (Int) -> Unit) {
-    Row(
-        horizontalArrangement = Arrangement.Center,
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        for (i in 1..5) {
-            Icon(
-                imageVector = Icons.Default.Star,
-                contentDescription = "Star",
-                tint = if (i <= rating) Color.Yellow else Color.Gray,
-                modifier = Modifier
-                    .size(32.dp)
-                    .clickable { onRatingChanged(i) }
-            )
-        }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun RatingBarPreview() {
-    val (rating, setRating) = remember { mutableStateOf(3) }
-    RatingBar(rating = rating) { newRating ->
-        setRating(newRating)
-    }
-}
+//@Composable
+//fun RatingBar(rating: Int, onRatingChanged: (Int) -> Unit) {
+//    Row(
+//        horizontalArrangement = Arrangement.Center,
+//        verticalAlignment = Alignment.CenterVertically,
+//    ) {
+//        for (i in 1..5) {
+//            Icon(
+//                imageVector = Icons.Default.Star,
+//                contentDescription = "Star",
+//                tint = if (i <= rating) Color.Yellow else Color.Gray,
+//                modifier = Modifier
+//                    .size(32.dp)
+//                    .clickable { onRatingChanged(i) }
+//            )
+//        }
+//    }
+//}
+//
+//@Preview(showBackground = true)
+//@Composable
+//fun RatingBarPreview() {
+//    val (rating, setRating) = remember { mutableStateOf(3) }
+//    RatingBar(rating = rating) { newRating ->
+//        setRating(newRating)
+//    }
+//} eror

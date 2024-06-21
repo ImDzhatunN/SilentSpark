@@ -64,6 +64,7 @@ fun BerandaSiswaScreen(
 
 @Composable
 fun BerandaSiswaContent(
+
     nama : String,
     listCourse : List<Course> = emptyList(),
 

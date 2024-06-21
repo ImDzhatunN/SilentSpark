@@ -2,7 +2,6 @@ package app.silentspark.silentspark.ui.theme.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -26,14 +25,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import app.silentspark.silentspark.R
+import app.silentspark.silentspark.ui.theme.components.PhotoPicker
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.Green
-import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
+
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -42,7 +42,6 @@ fun AkunScreen(
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit = {},
 ) {
-
 
     Scaffold(
         topBar = {
@@ -80,6 +79,9 @@ fun AkunScreen(
                     .fillMaxSize()
                     .padding(paddingValues)
             ) {
+                PhotoPicker()
+
+                Spacer(modifier = Modifier.height(8.dp))
                 Row (  modifier = Modifier
                     .padding(start = 30.dp),
                 verticalAlignment = Alignment.CenterVertically)
@@ -155,5 +157,4 @@ fun AkunScreen(
         }
     )
 }
-
 

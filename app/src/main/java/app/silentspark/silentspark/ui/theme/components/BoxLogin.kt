@@ -37,14 +37,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import app.silentspark.silentspark.ui.theme.theme.AbuBiruTua
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.Coklat
-import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 import app.silentspark.silentspark.ui.theme.theme.putih
 
 
@@ -226,7 +224,7 @@ fun BoxLogin(
                 Spacer(modifier = Modifier.width(4.dp))
                 ClickableText(
                     text = AnnotatedString("Buat Akun"),
-                    onClick = { /* Handle create account */ },
+                    onClick = { navController.navigate("signup")  },
                     style = TextStyle(
                         color = Color.Blue,
                         fontSize = 14.sp,

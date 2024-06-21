@@ -16,14 +16,15 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import app.silentspark.silentspark.ui.theme.components.ButtonGetStarted
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
-fun SplashScreen() {
+fun SplashScreen(
+    navController: NavHostController
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -90,23 +91,9 @@ fun SplashScreen() {
             Column(
                 modifier = Modifier.padding(start = 16.dp, top = 10.dp, end = 16.dp, bottom = 10.dp)
             ) {
-                ButtonGetStarted {}
+// eror                ButtonGetStarted {navController = navController}
             }
         }
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun SplashScreenPreview() {
-    MyApplicationTheme {
-        SplashScreen()
-    }
-}
-
-@Composable
-fun MyApplicationTheme(content: @Composable () -> Unit) {
-    MaterialTheme(
-        content = content
-    )
-}

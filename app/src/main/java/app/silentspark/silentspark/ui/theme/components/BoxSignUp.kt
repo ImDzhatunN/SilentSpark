@@ -36,19 +36,21 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import app.silentspark.silentspark.ui.theme.theme.AbuBiruMuda
 import app.silentspark.silentspark.ui.theme.theme.AbuBiruTua
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.Coklat
-import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 import app.silentspark.silentspark.ui.theme.theme.putih
 
 
 @Composable
-fun BoxSingUp(modifier: Modifier = Modifier) {
+fun BoxSingUp(
+    navController: NavHostController,
+    modifier: Modifier = Modifier)
+{
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -190,7 +192,7 @@ fun BoxSingUp(modifier: Modifier = Modifier) {
                 contentAlignment = Alignment.Center
             ) {
                 Button(
-                    onClick = { /* Handle login click */ },
+                    onClick = { navController.navigate("home") },
                     colors = ButtonDefaults.buttonColors(containerColor = Coklat),
                     shape = RoundedCornerShape(size = 6.dp),
                     modifier = modifier
@@ -211,7 +213,7 @@ fun BoxSingUp(modifier: Modifier = Modifier) {
                 contentAlignment = Alignment.Center
             ) {
                 Button(
-                    onClick = { /* Handle Google login click */ },
+                    onClick = {   },
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color.Transparent,
                         contentColor = Coklat
@@ -253,8 +255,8 @@ fun BoxSingUp(modifier: Modifier = Modifier) {
                 )
                 Spacer(modifier = Modifier.width(4.dp))
                 ClickableText(
-                    text = AnnotatedString("Buat Akun"),
-                    onClick = { /* Handle create account */ },
+                    text = AnnotatedString("Masuk Akun"),
+                    onClick = { navController.navigate("login")  },
                     style = TextStyle(
                         color = Color.Blue,
                         fontSize = 14.sp,
@@ -266,10 +268,3 @@ fun BoxSingUp(modifier: Modifier = Modifier) {
     }
 }
 
-@Composable
-@Preview
-private fun Preview() {
-    SilentSparkTheme {
-        BoxSingUp()
-    }
-}

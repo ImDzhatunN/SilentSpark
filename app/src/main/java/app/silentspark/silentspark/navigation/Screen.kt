@@ -2,6 +2,7 @@ package app.silentspark.silentspark.navigation
 
 sealed class Screen (val route: String){
     data object Home : Screen("home")
+    data object Splash : Screen("spalsh")
     data object Kelas: Screen("kelas")
     data object DetailKelas: Screen("detail_kelas")
     data object Pesanan: Screen("daftar_pesanan")

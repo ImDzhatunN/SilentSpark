@@ -26,7 +26,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -37,7 +36,7 @@ import app.silentspark.silentspark.ui.theme.components.detailkelas.Hubungi
 import app.silentspark.silentspark.ui.theme.components.detailkelas.TentangGuru
 import app.silentspark.silentspark.ui.theme.components.detailkelas.Tugas
 import app.silentspark.silentspark.ui.theme.theme.Green
-import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
