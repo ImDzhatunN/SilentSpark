@@ -1,7 +1,5 @@
 package app.silentspark.silentspark.ui.theme.screen
 
-
-
 import app.silentspark.silentspark.R
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
