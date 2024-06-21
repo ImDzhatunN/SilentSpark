@@ -42,7 +42,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.components.BoxProfileGuru
-import app.silentspark.silentspark.ui.theme.components.RatingBar
 import app.silentspark.silentspark.ui.theme.theme.Green
 import app.silentspark.silentspark.ui.theme.theme.putih
 
@@ -52,7 +51,7 @@ fun ProfileGuruScreen(
     teacherrating: Int,
     onBackClick: () -> Unit = {},
 ) {
-    var rating by rememberSaveable { mutableIntStateOf( teacherrating) }
+    var rating by rememberSaveable { mutableIntStateOf(teacherrating) }
     val scrollState = rememberScrollState()
 
     Column(
@@ -60,9 +59,10 @@ fun ProfileGuruScreen(
             .fillMaxSize()
             .background(color = Green)
             .verticalScroll(scrollState)
-    ){
-        Row (modifier = modifier
-            .padding(top = 15.dp, start = 15.dp)
+    ) {
+        Row(
+            modifier = modifier
+                .padding(top = 15.dp, start = 15.dp)
         ) {
             Image(
                 modifier = modifier
@@ -101,14 +101,13 @@ fun ProfileGuruScreen(
                     color = putih,
                     fontSize = 16.sp,
                 )
-                RatingBar(rating = rating) { newRating ->
+                TeacherRatingBar(rating = rating) { newRating ->
                     rating = newRating
                 }
                 Text(
                     buildAnnotatedString {
                         append("4.9/")
-                        withStyle(style = SpanStyle(fontSize = 14.sp)
-                        ) {
+                        withStyle(style = SpanStyle(fontSize = 14.sp)) {
                             append("5")
                         }
                     },
@@ -132,7 +131,8 @@ fun ProfileGuruScreen(
                 textreview = "\"Beli kelas selama tiga bulan, pembelajarannya menarik dan mudah dimengerti. Alhamdulillah dua bulan juga udah mulai paham dan bisa mempraktekan.",
                 initialRating = 4,
                 buttonText = "Rp680.000",
-                onButtonClick = { /*TODO*/ })
+                onButtonClick = { /*TODO*/ }
+            )
         }
 
     }
@@ -140,7 +140,7 @@ fun ProfileGuruScreen(
 }
 
 @Composable
-fun Teacherrating(rating: Float,  onRatingChanged: (Int) -> Unit) {
+fun TeacherRatingBar(rating: Int, onRatingChanged: (Int) -> Unit) {
     Row {
         for (i in 1..5) {
             Icon(
@@ -156,11 +156,11 @@ fun Teacherrating(rating: Float,  onRatingChanged: (Int) -> Unit) {
     }
 }
 
-
 @Preview(showSystemUi = true)
 @Composable
 private fun ProfileGuruScreenPreview() {
-        ProfileGuruScreen(
-            teacherrating = 5,
-        )
+    ProfileGuruScreen(
+        teacherrating = 5,
+    )
 }
+

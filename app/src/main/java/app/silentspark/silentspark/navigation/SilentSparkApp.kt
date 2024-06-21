@@ -27,6 +27,8 @@ import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaScreen
 import app.silentspark.silentspark.ui.theme.screen.KelasSiswa
 import app.silentspark.silentspark.ui.theme.screen.PesananSiswa
+import app.silentspark.silentspark.ui.theme.theme.Abuabu
+import app.silentspark.silentspark.ui.theme.theme.KuningMuda
 
 @Composable
 fun SilentSparkApp(
@@ -62,7 +64,6 @@ fun SilentSparkApp(
         }
     }
 }
-
 @Composable
 private fun BottomBar(
     navController: NavHostController,
@@ -82,7 +83,7 @@ private fun BottomBar(
             ),
             NavigationItem(
                 title = stringResource(id = R.string.menu_kelas),
-                icon = Icons.Default.T,
+                icon = Icons.Default.Tab,
                 screen = Screen.Kelas
             ),
             NavigationItem(
@@ -96,9 +97,11 @@ private fun BottomBar(
                 screen = Screen.Akun
             )
         )
+
         navigationItems.map { item ->
+            val isSelected = currentRoute == item.screen.route
             NavigationBarItem(
-                selected = currentRoute == item.screen.route,
+                selected = isSelected,
                 onClick = {
                     navController.navigate(item.screen.route) {
                         popUpTo(navController.graph.findStartDestination().id) {
@@ -108,12 +111,24 @@ private fun BottomBar(
                         launchSingleTop = true
                     }
                 },
-                icon = { Icon(imageVector = item.icon, contentDescription = item.title) },
-                label = { Text(text = item.title) }
+                icon = {
+                    Icon(
+                        imageVector = item.icon,
+                        contentDescription = item.title,
+                        tint = if (isSelected) KuningMuda else Abuabu
+                    )
+                },
+                label = {
+                    Text(
+                        text = item.title,
+                        color = if (isSelected) KuningMuda else Abuabu
+                    )
+                }
             )
         }
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable
