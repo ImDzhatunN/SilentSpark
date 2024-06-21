@@ -1,4 +1,4 @@
-package app.silentspark.silentspark.ui.theme.screen
+package app.silentspark.silentspark.navigation
 
 
 import app.silentspark.silentspark.R
@@ -6,8 +6,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.ReceiptLong
 import androidx.compose.material.icons.filled.Tab
-import androidx.compose.material.icons.filled.Topic
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -24,8 +24,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import app.silentspark.silentspark.navigation.NavigationItem
-import app.silentspark.silentspark.navigation.Screen
+import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaScreen
+import app.silentspark.silentspark.ui.theme.screen.KelasSiswa
+import app.silentspark.silentspark.ui.theme.screen.PesananSiswa
 
 @Composable
 fun SilentSparkApp(
@@ -81,12 +82,12 @@ private fun BottomBar(
             ),
             NavigationItem(
                 title = stringResource(id = R.string.menu_kelas),
-                icon = Icons.Default.Topic,
+                icon = Icons.Default.T,
                 screen = Screen.Kelas
             ),
             NavigationItem(
                 title = stringResource(id = R.string.menu_pesanan),
-                icon = Icons.Default.Tab,
+                icon = Icons.Filled.ReceiptLong,
                 screen = Screen.Pesanan
             ),
             NavigationItem(
