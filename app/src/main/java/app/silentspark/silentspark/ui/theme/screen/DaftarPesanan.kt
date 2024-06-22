@@ -32,6 +32,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.dummy.DataDummy
 import app.silentspark.silentspark.model.Pesanan
 import app.silentspark.silentspark.ui.theme.components.BoxItemDaftarPesanan
@@ -39,7 +40,6 @@ import app.silentspark.silentspark.ui.theme.components.ItemSearchBarPreview
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.Green
 import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DaftarPesanan(
@@ -141,4 +141,17 @@ fun DaftarPesanan(
             }
         }
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewDaftarPesanan() {
+    val navController = rememberNavController()
+    SilentSparkTheme {
+        DaftarPesanan(
+            navController = navController,
+            listPesan = DataDummy.listPesanan,
+            onBackClick = {}
+        )
+    }
 }

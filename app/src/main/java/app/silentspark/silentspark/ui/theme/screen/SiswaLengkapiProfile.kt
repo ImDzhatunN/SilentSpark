@@ -22,6 +22,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.components.ButtonNext
 import app.silentspark.silentspark.ui.theme.components.DataLengkapiProfilesiswa
@@ -29,9 +31,10 @@ import app.silentspark.silentspark.ui.theme.components.PhotoPicker
 import app.silentspark.silentspark.ui.theme.components.SiswaLengkapiProfileItem
 import app.silentspark.silentspark.ui.theme.theme.ijolumut
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SiswaLengkapiProfileScreen() {
+fun SiswaLengkapiProfileScreen(navController : NavHostController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -102,7 +105,7 @@ fun SiswaLengkapiProfileScreen() {
                         ) {
                             ButtonNext(
                                 text = "Selanjutnya",
-                                onClick = {
+                                onClick = {navController.navigate("home")
                                 },
                                 modifier = Modifier.align(Alignment.CenterHorizontally)
                             )
@@ -117,5 +120,5 @@ fun SiswaLengkapiProfileScreen() {
 @Preview(showBackground = true)
 @Composable
 fun SiswaLengkapiProfileScreenPreview() {
-    SiswaLengkapiProfileScreen()
+    SiswaLengkapiProfileScreen(navController = rememberNavController())
 }

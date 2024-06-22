@@ -2,6 +2,7 @@ package app.silentspark.silentspark.ui.theme.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -18,6 +19,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.components.ButtonKirim
 import app.silentspark.silentspark.ui.theme.components.RatingBar
@@ -25,7 +28,7 @@ import app.silentspark.silentspark.ui.theme.theme.ijolumut
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RatingAndReviewScreen() {
+fun RatingAndReviewScreen(navController: NavHostController) {
     var rating by remember { mutableStateOf(4) }
     var reviewText by remember { mutableStateOf("") }
 
@@ -43,6 +46,7 @@ fun RatingAndReviewScreen() {
                             modifier = Modifier
                                 .width(38.dp)
                                 .height(39.dp)
+                                .clickable { navController.popBackStack()}
                         )
                         Spacer(modifier = Modifier.weight(1f))
 
@@ -73,7 +77,10 @@ fun RatingAndReviewScreen() {
                     modifier = Modifier
                         .width(336.dp)
                         .height(416.dp)
-                        .background(color = Color(0x2667725F), shape = RoundedCornerShape(size = 25.dp)),
+                        .background(
+                            color = Color(0x2667725F),
+                            shape = RoundedCornerShape(size = 25.dp)
+                        ),
                     contentAlignment = Alignment.Center
                 ) {
                     Column(
@@ -149,5 +156,5 @@ fun RatingAndReviewScreen() {
 @Preview(showBackground = true)
 @Composable
 fun RatingAndReviewScreenPreview() {
-    RatingAndReviewScreen()
+    RatingAndReviewScreen(navController= rememberNavController())
 }

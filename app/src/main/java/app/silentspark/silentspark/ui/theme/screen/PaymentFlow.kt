@@ -20,11 +20,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.ui.theme.components.ItemPayment
 import app.silentspark.silentspark.ui.theme.theme.poppinsFamily
 
 @Composable
-fun PaymentFlow(){
+
+fun PaymentFlow(navController : NavHostController){
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -32,23 +35,25 @@ fun PaymentFlow(){
             .padding(vertical = 8.dp)
     ) {
         Row(
-            modifier = Modifier.padding(16.dp).fillMaxWidth(),
+            modifier = Modifier
+                .padding(16.dp)
+                .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
                 modifier = Modifier
                     .size(42.dp)
-                    .clickable { },
+                    .clickable { navController.popBackStack() },
                 contentScale = ContentScale.FillWidth,
                 painter =  painterResource(id = R.drawable.back),
                 contentDescription = "",
                 alignment = Alignment.Center,
             )
             Text(text = "Pembayaran",
-                    fontWeight = FontWeight.Bold,
-                    fontFamily = poppinsFamily,
-                    color = Color.Gray
+                fontWeight = FontWeight.Bold,
+                fontFamily = poppinsFamily,
+                color = Color.Gray
             )
         }
         Column (
@@ -64,5 +69,5 @@ fun PaymentFlow(){
 @Preview(showBackground = true)
 @Composable
 private fun PreviewPaymentFLow() {
-    PaymentFlow()
+    PaymentFlow(navController = rememberNavController())
 }

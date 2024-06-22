@@ -44,6 +44,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.KuningMuda
@@ -51,6 +53,7 @@ import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
 fun BoxProfileGuru(
+    navController: NavHostController,
     price: String,
     namareview : String,
     textreview : String,
@@ -118,7 +121,7 @@ fun BoxProfileGuru(
 
             Column(
                 modifier = modifier.fillMaxWidth(),
-               verticalArrangement = Arrangement.SpaceBetween,
+                verticalArrangement = Arrangement.SpaceBetween,
             ) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -228,7 +231,7 @@ fun BoxProfileGuru(
                         fontSize = 12.sp,
 
 
-                    )
+                        )
                 }
             }
             Spacer(modifier = modifier.height(8.dp))
@@ -264,7 +267,7 @@ fun BoxProfileGuru(
                         fontFamily = FontFamily(Font(R.font.poppins_regular)),
                         fontSize = 14.sp,
                         color = Coklat,
-                        )
+                    )
                 }
             }
             Spacer(modifier = Modifier.height(16.dp))
@@ -273,7 +276,7 @@ fun BoxProfileGuru(
                 contentAlignment = Alignment.Center
             ) {
                 Button(
-                    onClick = { /* Handle login click */ },
+                    onClick = {navController.navigate("rincian_pesanan")},
                     colors = ButtonDefaults.buttonColors(containerColor = Coklat),
                     shape = RoundedCornerShape(size = 6.dp),
                     modifier = modifier
@@ -310,21 +313,19 @@ fun RatingBar(rating: Int, onRatingChanged: (Int) -> Unit) {
     }
 }
 
-    @Preview(showBackground = false)
-    @Composable
-    fun PreviewBoxProfileGuru() {
-        BoxProfileGuru(
-            price = "1 Bulan",
-            namareview = "Angga",
-            textreview = "Beli kelas selama tiga bulan, pembelajarannya menarik dan mudah dimengerti. Alhamdulillah dua bulan juga udah mulai paham dan bisa mempraktekan.",
-            initialRating = 4, // Set nilai initialRating agar bintang terlihat
-            buttonText = "Rp 980.000",
-            onButtonClick = { /* Handle button click */}
-        )
-    }
-
-
-
+@Preview(showBackground = false)
+@Composable
+fun PreviewBoxProfileGuru() {
+    BoxProfileGuru(
+        navController = rememberNavController(),
+        price = "1 Bulan",
+        namareview = "Angga",
+        textreview = "Beli kelas selama tiga bulan, pembelajarannya menarik dan mudah dimengerti. Alhamdulillah dua bulan juga udah mulai paham dan bisa mempraktekan.",
+        initialRating = 4, // Set nilai initialRating agar bintang terlihat
+        buttonText = "Rp 980.000",
+        onButtonClick = { /* Handle button click */}
+    )
+}
 
 
 

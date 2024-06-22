@@ -29,8 +29,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.dummy.DataDummy
 import app.silentspark.silentspark.model.Course
+import app.silentspark.silentspark.navigation.Screen
 import app.silentspark.silentspark.state.UiState
 import app.silentspark.silentspark.ui.theme.components.BannerMain
 import app.silentspark.silentspark.ui.theme.components.ItemBeranda
@@ -55,7 +57,7 @@ fun BerandaSiswaScreen(
 
         }
         is UiState.Success -> {
-            BerandaSiswaContent(nama = "Ayu Fernanda", listCourse = uiState.data)
+            BerandaSiswaContent(navController = navController, nama = "Ayu Fernanda", listCourse = uiState.data)
 
         }
     }
@@ -64,11 +66,11 @@ fun BerandaSiswaScreen(
 
 @Composable
 fun BerandaSiswaContent(
-
+    navController: NavHostController,
     nama : String,
     listCourse : List<Course> = emptyList(),
 
-) {
+    ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -106,15 +108,21 @@ fun BerandaSiswaContent(
 
             Image(
                 painter = painterResource(id = R.drawable.ic_notif),
-                contentDescription = "notification")
+                contentDescription = "notification",
+                modifier = Modifier
+                    .size(30.dp)
+                    .clickable {
+                        navController.navigate("notification")
+                    }
+            )
         }
 
         Row(modifier = Modifier.padding(top = 16.dp)) {
             Text(
                 text = stringResource(id = R.string.say_hi, nama),
-                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
-                    fontSize = 14.sp,
-                    color = Coklat
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+                fontSize = 14.sp,
+                color = Coklat
             )
             Image(painter = painterResource(id = R.drawable.ic_say_hi), contentDescription = "Icon say hi", modifier = Modifier.padding(start = 8.dp))
         }
@@ -128,8 +136,8 @@ fun BerandaSiswaContent(
             fontFamily = FontFamily(Font(R.font.poppins_semibold)),
             fontSize = 14.sp,
             modifier = Modifier
-            .padding(top = 16.dp)
-            .align(Alignment.CenterHorizontally))
+                .padding(top = 16.dp)
+                .align(Alignment.CenterHorizontally))
 
         LazyColumn {
             items(listCourse) { course ->
@@ -140,7 +148,7 @@ fun BerandaSiswaContent(
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(8.dp)
-                        .clickable { })
+                        .clickable { navController.navigate(Screen.ProfileGuru.route)})
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
@@ -149,8 +157,8 @@ fun BerandaSiswaContent(
 
 @Composable
 @Preview(showBackground = true)
-fun PreviewBerandaSiswa() {
-    BerandaSiswaContent("Aldy",
+fun PreviewBerandaSiswa(navController: NavHostController = rememberNavController()) {
+    BerandaSiswaContent(navController = navController,"Aldy",
         listCourse = DataDummy.listCouse
     )
 }

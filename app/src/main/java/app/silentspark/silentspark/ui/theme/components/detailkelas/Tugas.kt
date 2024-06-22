@@ -58,7 +58,7 @@ fun Tugas(
     nilai:String,
     setText: (String) -> Unit
 
-    )
+)
 {
     Box(
         modifier = modifier
@@ -72,18 +72,18 @@ fun Tugas(
             modifier = Modifier
                 .padding(16.dp)
         ) {
-                Text(
-                    text = namatugas,
-                    color = Coklat,
-                    fontSize = 18.sp,
-                    fontFamily = FontFamily(Font(R.font.poppins_semibold)),
-                )
-                Text(
-                    text = desctugas,
-                    color = Coklat,
-                    fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.poppins_regular)),
-                )
+            Text(
+                text = namatugas,
+                color = Coklat,
+                fontSize = 18.sp,
+                fontFamily = FontFamily(Font(R.font.poppins_semibold)),
+            )
+            Text(
+                text = desctugas,
+                color = Coklat,
+                fontSize = 14.sp,
+                fontFamily = FontFamily(Font(R.font.poppins_regular)),
+            )
 
             Row(
                 modifier = Modifier

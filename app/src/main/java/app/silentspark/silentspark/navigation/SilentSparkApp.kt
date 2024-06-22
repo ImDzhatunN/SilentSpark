@@ -26,13 +26,29 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import app.silentspark.silentspark.dummy.DataDummy
 import app.silentspark.silentspark.ui.theme.screen.AkunScreen
+import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaContent
 import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaScreen
+import app.silentspark.silentspark.ui.theme.screen.DaftarPesanan
 import app.silentspark.silentspark.ui.theme.screen.DetailKelasScreen
 import app.silentspark.silentspark.ui.theme.screen.KelasScreen
 import app.silentspark.silentspark.ui.theme.screen.LoginScreen
 import app.silentspark.silentspark.ui.theme.screen.SignUpScreen
 import app.silentspark.silentspark.ui.theme.screen.SplashScreen
+import app.silentspark.silentspark.ui.theme.screen.DetailPesanan
+import app.silentspark.silentspark.ui.theme.screen.KelasScreen
+import app.silentspark.silentspark.ui.theme.screen.LoginScreen
+import app.silentspark.silentspark.ui.theme.screen.NotificationScreen
+import app.silentspark.silentspark.ui.theme.screen.PaymentFlow
+import app.silentspark.silentspark.ui.theme.screen.ProfileGuruScreen
+import app.silentspark.silentspark.ui.theme.screen.ProfileScreen
+import app.silentspark.silentspark.ui.theme.screen.RatingAndReviewScreen
+import app.silentspark.silentspark.ui.theme.screen.RincianPesananScreen
+import app.silentspark.silentspark.ui.theme.screen.SignUpScreen
+import app.silentspark.silentspark.ui.theme.screen.SiswaLengkapiProfileScreen
+import app.silentspark.silentspark.ui.theme.screen.SplashScreen
+import app.silentspark.silentspark.ui.theme.screen.TandaTerimaScreen
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.KuningMuda
 
@@ -41,9 +57,17 @@ fun SilentSparkApp(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController()
 ) {
+
+
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
+
     Scaffold(
         bottomBar = {
-            BottomBar(navController)
+            if (currentRoute != Screen.Splash.route && currentRoute != Screen.Login.route && currentRoute != Screen.SignUp.route && currentRoute != Screen.Lengkapi.route) {
+                BottomBar(navController)
+            }
+
         },
         modifier = modifier
     ) { contentPadding ->
@@ -55,15 +79,29 @@ fun SilentSparkApp(
             composable(Screen.Splash.route) {
                 SplashScreen(navController = navController)
             }
+
             composable(Screen.Login.route) {
+                LoginScreen(navController = navController)
+            }
+            composable(Screen.Notification.route) {
+                NotificationScreen(navController = navController)
+            }
+            composable(Screen.Rating.route) {
+                RatingAndReviewScreen(navController = navController)
+            }
+            composable(Screen.Login.route) {
+                LoginScreen(navController = navController)
+            }
+            composable("login") {
                 LoginScreen(navController = navController)
             }
             composable(Screen.SignUp.route) {
                 SignUpScreen(navController = navController)
             }
 
-            composable(Screen.Home.route) {
-                BerandaSiswaScreen(navController = navController)
+            composable("home") {
+                BerandaSiswaContent(navController = navController, "Aldy",
+                    listCourse = DataDummy.listCouse)
             }
 
             composable("kelas") {
@@ -81,10 +119,55 @@ fun SilentSparkApp(
                 DetailKelasScreen(navController = navController, kelasId = kelasId)
             }
 
+            composable("daftar_pesanan") {
+                DaftarPesanan( navController = navController,
+                    listPesan = DataDummy.listPesanan,
+                    onBackClick = {})
+            }
 
             composable(Screen.Akun.route) {
-               AkunScreen(navController = navController)
-          }
+                AkunScreen(navController = navController)
+            }
+
+
+            composable("tanda_terima/{pesanan.id}") {
+                TandaTerimaScreen( navController = navController,
+                    tandaterima = DataDummy.listKeteranganPesanan,
+                    onBackClick = {})
+            }
+
+            composable(Screen.Profile.route) {
+                ProfileScreen(navController = navController)
+
+            }
+
+            composable(Screen.Lengkapi.route) {
+                SiswaLengkapiProfileScreen(navController = navController)
+
+            }
+
+            composable(Screen.ProfileGuru.route) {
+                ProfileGuruScreen(navController = navController, teacherrating = 5)
+
+            }
+
+            composable(Screen.RincianPesanan.route) {
+                RincianPesananScreen(navController = navController)
+
+            }
+
+            composable(Screen.DetailPesanan.route) {
+                DetailPesanan(navController = navController)
+
+            }
+            composable(Screen.PaymentFlow.route) {
+                PaymentFlow(navController = navController)
+
+            }
+
+            composable(Screen.Akun.route) {
+                AkunScreen(navController = navController)
+            }
         }
     }
 }
@@ -159,3 +242,4 @@ private fun BottomBar(
 private fun PreviewSilentSparkApp() {
     SilentSparkApp()
 }
+

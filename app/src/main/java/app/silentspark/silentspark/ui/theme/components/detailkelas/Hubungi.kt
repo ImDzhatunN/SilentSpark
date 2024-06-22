@@ -29,6 +29,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
@@ -37,9 +39,10 @@ import app.silentspark.silentspark.ui.theme.theme.putih
 @Composable
 fun Hubungi(
     modifier: Modifier = Modifier,
-    email : String
+    email : String,
+    navController: NavHostController
+) {
 
-    ) {
     Box(
         modifier = modifier
             .width(360.dp)
@@ -87,14 +90,15 @@ fun Hubungi(
                         modifier = Modifier
                             .size(30.dp)
                             .clickable {  }
-
                     )
                     Text(
                         text = "WhatsApp",
                         fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                         color = putih,
                         fontSize = 12.sp,
+
                         )
+
                 }
             }
 
@@ -108,22 +112,19 @@ fun Hubungi(
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
                 Image(
                     modifier = modifier
                         .width(38.dp)
                         .height(39.dp),
                     painter = painterResource(id = R.drawable.ic_tambah),
                     contentDescription = "Tambahkan Ulasan",
-
                 )
                 Text(
-                    text = "Ulasan",
+                    text = "Tambah Ulasan",
                     color = Coklat,
                     fontSize = 14.sp,
                     fontFamily = FontFamily(Font(R.font.poppins_medium)),
-                    modifier = Modifier
-                        .padding(9.dp)
+                    modifier = Modifier.padding(9.dp)
                 )
             }
         }
@@ -134,9 +135,11 @@ fun Hubungi(
 @Preview(showBackground = true)
 @Composable
 private fun Preview() {
+    val navController = rememberNavController()
     SilentSparkTheme {
         Hubungi(
             email = "biancasavandor@gmail.com",
+            navController = navController
         )
     }
 }

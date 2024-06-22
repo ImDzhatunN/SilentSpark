@@ -17,16 +17,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
+
 @Composable
 fun ButtonGetStarted(
     navController: NavHostController)
-     {
+{
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .size(width = 200.dp, height = 50.dp)
             .background(Color(0xFF4A4A3F), shape = RoundedCornerShape(10.dp))
             .clickable {navController.navigate("login")}
+            .clickable {
+                navController.navigate("login")
+            }
     ) {
         Text(
             text = "Get Started",

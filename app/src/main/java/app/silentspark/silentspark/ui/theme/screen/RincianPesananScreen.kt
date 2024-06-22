@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -21,7 +22,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.R
+import app.silentspark.silentspark.navigation.Screen
 import app.silentspark.silentspark.ui.theme.components.ButtonNext
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.CoklatMuda
@@ -30,7 +34,8 @@ import app.silentspark.silentspark.ui.theme.theme.ijoo
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RincianPesananScreen() {
+
+fun RincianPesananScreen(navController : NavHostController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -45,6 +50,7 @@ fun RincianPesananScreen() {
                             modifier = Modifier
                                 .width(38.dp)
                                 .height(39.dp)
+                                .clickable { navController.popBackStack() }
                         )
                         Spacer(modifier = Modifier.weight(1f))
                         Text(
@@ -139,7 +145,10 @@ fun RincianPesananScreen() {
                                 .padding(1.5.dp)
                                 .width(145.dp)
                                 .height(45.dp)
-                                .background(color = Color.White, shape = RoundedCornerShape(size = 9.dp))
+                                .background(
+                                    color = Color.White,
+                                    shape = RoundedCornerShape(size = 9.dp)
+                                )
                                 .padding(start = 16.dp, top = 14.dp, end = 16.dp, bottom = 14.dp),
                             textAlign = TextAlign.Center
                         )
@@ -152,7 +161,10 @@ fun RincianPesananScreen() {
                                 .padding(1.5.dp)
                                 .width(115.dp)
                                 .height(47.dp)
-                                .background(color = CoklatMuda, shape = RoundedCornerShape(size = 9.dp))
+                                .background(
+                                    color = CoklatMuda,
+                                    shape = RoundedCornerShape(size = 9.dp)
+                                )
                                 .padding(start = 16.dp, top = 14.dp, end = 16.dp, bottom = 14.dp),
                             textAlign = TextAlign.Center
                         )
@@ -221,7 +233,7 @@ fun RincianPesananScreen() {
             Column(
                 modifier = Modifier.padding(8.dp)
             ) {
-                ButtonNext(text = "Selanjutnya", onClick = {
+                ButtonNext(text = "Selanjutnya", onClick = {navController.navigate(Screen.DetailPesanan.route)
                 })
             }
         }
@@ -231,5 +243,5 @@ fun RincianPesananScreen() {
 @Preview(showBackground = true)
 @Composable
 fun RincianPesananScreenPreview() {
-    RincianPesananScreen()
+    RincianPesananScreen(navController = rememberNavController())
 }

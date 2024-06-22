@@ -40,6 +40,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.components.BoxProfileGuru
 import app.silentspark.silentspark.ui.theme.components.RatingBar
@@ -127,6 +128,8 @@ fun ProfileSiswa(
             contentAlignment = Alignment.BottomCenter
         ) {
             BoxProfileGuru(
+
+                navController = rememberNavController(),
                 price = "3 bulan",
                 namareview = "Angga",
                 textreview = "\"Beli kelas selama tiga bulan, pembelajarannya menarik dan mudah dimengerti. Alhamdulillah dua bulan juga udah mulai paham dan bisa mempraktekan.",
@@ -156,11 +159,3 @@ fun Teacherrating(rating: Float,  onRatingChanged: (Int) -> Unit) {
     }
 }
 
-
-@Preview(showSystemUi = true)
-@Composable
-private fun ProfileGuruScreenPreview() {
-    ProfileGuruScreen(
-        teacherrating = 5,
-    )
-}

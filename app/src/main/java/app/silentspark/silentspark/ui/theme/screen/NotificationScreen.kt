@@ -1,6 +1,7 @@
 package app.silentspark.silentspark.ui.theme.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -16,6 +17,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.ijoabu
@@ -23,7 +26,7 @@ import app.silentspark.silentspark.ui.theme.theme.ijolumut
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun NotificationScreen() {
+fun NotificationScreen(navController: NavHostController) {
     Scaffold(
         topBar = {
             TopAppBar(title = {
@@ -37,6 +40,7 @@ fun NotificationScreen() {
                         modifier = Modifier
                             .width(38.dp)
                             .height(39.dp)
+                            .clickable { navController.popBackStack()}
                     )
                     Spacer(modifier = Modifier.weight(1f))
 
@@ -163,5 +167,5 @@ fun NotificationItem(
 @Preview(showBackground = true)
 @Composable
 fun PreviewNotificationScreen() {
-    NotificationScreen()
+    NotificationScreen(navController = rememberNavController())
 }

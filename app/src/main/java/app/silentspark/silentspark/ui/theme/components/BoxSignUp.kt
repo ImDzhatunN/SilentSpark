@@ -192,7 +192,7 @@ fun BoxSingUp(
                 contentAlignment = Alignment.Center
             ) {
                 Button(
-                    onClick = { navController.navigate("home") },
+                    onClick = { navController.navigate("lengkapi_profile") },
                     colors = ButtonDefaults.buttonColors(containerColor = Coklat),
                     shape = RoundedCornerShape(size = 6.dp),
                     modifier = modifier

@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import app.silentspark.silentspark.ui.theme.components.PreviewButtonTutup
 import app.silentspark.silentspark.ui.theme.theme.poppinsFamily
 
+
 @Composable
 fun PaymentFailed() {
     Column (
@@ -108,7 +109,7 @@ fun PaymentFailed() {
                 fontSize = 14.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = colorResource(id = R.color.text2)
-                )
+            )
         }
     }
 }

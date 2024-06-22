@@ -19,6 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import app.silentspark.silentspark.ui.theme.components.ButtonGetStarted
 import app.silentspark.silentspark.ui.theme.theme.putih
 
 @Composable
@@ -91,9 +92,11 @@ fun SplashScreen(
             Column(
                 modifier = Modifier.padding(start = 16.dp, top = 10.dp, end = 16.dp, bottom = 10.dp)
             ) {
-// eror                ButtonGetStarted {navController = navController}
+
+                ButtonGetStarted(navController= navController)
             }
         }
     }
 }
+
 

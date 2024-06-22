@@ -29,7 +29,6 @@ import androidx.compose.ui.unit.sp
 import app.silentspark.silentspark.ui.theme.theme.KuningMuda
 import app.silentspark.silentspark.ui.theme.theme.SilentSparkTheme
 import app.silentspark.silentspark.ui.theme.theme.putih
-
 @Composable
 fun ItemBeranda(
     modifier: Modifier = Modifier,

@@ -46,8 +46,8 @@ fun ButtonNext(
                 fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                 color = putih,
                 textAlign = TextAlign.Right,),
-                modifier = Modifier.align(Alignment.CenterVertically)
-            )
+            modifier = Modifier.align(Alignment.CenterVertically)
+        )
 
 
     }

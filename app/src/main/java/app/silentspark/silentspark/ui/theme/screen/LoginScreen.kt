@@ -25,10 +25,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.ui.theme.components.BoxLogin
 import app.silentspark.silentspark.ui.theme.theme.Green
 import app.silentspark.silentspark.ui.theme.theme.putih
-
 @Composable
 fun LoginScreen (
     navController: NavHostController,
@@ -113,6 +113,13 @@ fun LoginScreen (
         BoxLogin(navController = navController)
     }
 }
+
+@Preview(showBackground = true)
+@Composable
+private fun PreviewSignInScreen(){
+    LoginScreen(navController = rememberNavController())
+}
+
 
 
 

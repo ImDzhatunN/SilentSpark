@@ -25,10 +25,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.R
+import app.silentspark.silentspark.navigation.Screen
 import app.silentspark.silentspark.ui.theme.components.PhotoPicker
 import app.silentspark.silentspark.ui.theme.theme.Coklat
 import app.silentspark.silentspark.ui.theme.theme.Green
@@ -57,7 +60,7 @@ fun AkunScreen(
                             modifier = modifier
                                 .width(38.dp)
                                 .height(39.dp)
-                                .clickable { onBackClick() }
+                                .clickable { navController.popBackStack() }
                         )
                         Spacer(modifier = modifier.weight(1f))
                         Text(
@@ -82,16 +85,17 @@ fun AkunScreen(
                 PhotoPicker()
 
                 Spacer(modifier = Modifier.height(8.dp))
-                Row (  modifier = Modifier
-                    .padding(start = 30.dp),
-                verticalAlignment = Alignment.CenterVertically)
-                {
+                Row(
+                    modifier = Modifier
+                        .padding(start = 30.dp)
+                        .clickable { navController.navigate("profile") },
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Icon(
-                        imageVector =Icons.Outlined.Person ,
+                        imageVector = Icons.Outlined.Person,
                         contentDescription = "Profile",
                         tint = Coklat,
-                        modifier = Modifier
-                            .size(28.dp)
+                        modifier = Modifier.size(28.dp)
                     )
                     Text(
                         text = "Profile",
@@ -103,6 +107,7 @@ fun AkunScreen(
                         modifier = modifier.padding(start = 20.dp)
                     )
                 }
+
                 Spacer(modifier = modifier.height(10.dp))
 
                 Row (  modifier = Modifier
@@ -128,10 +133,11 @@ fun AkunScreen(
                 }
                 Spacer(modifier = modifier.height(10.dp))
 
-                Row (  modifier = Modifier
-                    .padding(start = 30.dp),
-                    verticalAlignment = Alignment.CenterVertically)
-                {
+                Row(
+                    modifier = Modifier.padding(start = 30.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+
                     Icon(
                         imageVector =Icons.Outlined.ExitToApp ,
                         contentDescription = "Keluar",
@@ -148,13 +154,23 @@ fun AkunScreen(
                             fontFamily = FontFamily(Font(R.font.poppins_semibold)),
                             color = Coklat
                         ),
-                        modifier = modifier.padding(start = 20.dp)
+                        modifier = Modifier
+                            .padding(start = 20.dp)
+                            .clickable {
+                                navController.navigate(Screen.Login.route)
+                            }
                     )
-                }
 
+                }
 
             }
         }
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun PreviewAccountScreen() {
+    AkunScreen(navController = rememberNavController())
 }
 

@@ -29,118 +29,118 @@ import app.silentspark.silentspark.ui.theme.theme.putih
 fun CompDetailPesanan(
     modifier: Modifier = Modifier
 ) { Box(modifier = modifier
-        .clip(RoundedCornerShape(16.dp))
-        .fillMaxWidth()
-        .background(color = Hijau)
-    ) {
-        Column (modifier.padding(16.dp).fillMaxWidth().align(Alignment.Center)){
-            Box(modifier = Modifier
+    .clip(RoundedCornerShape(16.dp))
+    .fillMaxWidth()
+    .background(color = Hijau)
+) {
+    Column (modifier.padding(16.dp).fillMaxWidth().align(Alignment.Center)){
+        Box(modifier = Modifier
+            .size(150.dp)
+            .padding(16.dp)
+            .align(Alignment.CenterHorizontally)
+        ) {
+            Image( modifier = modifier
                 .size(150.dp)
-                .padding(16.dp)
-                .align(Alignment.CenterHorizontally)
-            ) {
-                Image( modifier = modifier
-                    .size(150.dp)
-                    .align(Alignment.Center),
-                    painter = painterResource(id = R.drawable.fotodetailpesanan), contentDescription = "")
-            }
-            Row (modifier = modifier
-                .padding(start =16.dp, end=16.dp, bottom = 8.dp)
-                .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = "Harga",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-                Text(text = "Rp.980.000/bulan",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-            }
-            Row (modifier = modifier
-                .padding(start =16.dp, end=16.dp, bottom = 8.dp)
-                .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = "Nama",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-                Text(text = "Bianca Savador",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-            }
-            Row (modifier = modifier
-                .padding(start =16.dp, end=16.dp, bottom = 8.dp)
-                .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = "Sertifikat",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-                Text(text = "Tersedia",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-            }
-            Row (modifier = modifier
-                .padding(start =16.dp, end=16.dp, bottom = 8.dp)
-                .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = "Bahasa",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-                Text(text = "Indonesia|Inggris",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-            }
-            Row (modifier = modifier
-                .padding(start =16.dp, end=16.dp, bottom = 8.dp)
-                .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(text = "Ketersediaan",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-                Text(text = "07.00-22.00 WIB",
-                    fontFamily = poppinsFamily,
-                    fontSize= 12.sp,
-                    fontWeight = FontWeight.Medium,
-                    color = putih
-                )
-            }
+                .align(Alignment.Center),
+                painter = painterResource(id = R.drawable.fotodetailpesanan), contentDescription = "")
+        }
+        Row (modifier = modifier
+            .padding(start =16.dp, end=16.dp, bottom = 8.dp)
+            .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(text = "Harga",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+            Text(text = "Rp.980.000/bulan",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+        }
+        Row (modifier = modifier
+            .padding(start =16.dp, end=16.dp, bottom = 8.dp)
+            .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(text = "Nama",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+            Text(text = "Bianca Savador",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+        }
+        Row (modifier = modifier
+            .padding(start =16.dp, end=16.dp, bottom = 8.dp)
+            .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(text = "Sertifikat",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+            Text(text = "Tersedia",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+        }
+        Row (modifier = modifier
+            .padding(start =16.dp, end=16.dp, bottom = 8.dp)
+            .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(text = "Bahasa",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+            Text(text = "Indonesia|Inggris",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+        }
+        Row (modifier = modifier
+            .padding(start =16.dp, end=16.dp, bottom = 8.dp)
+            .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(text = "Ketersediaan",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
+            Text(text = "07.00-22.00 WIB",
+                fontFamily = poppinsFamily,
+                fontSize= 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = putih
+            )
         }
     }
+}
 }
 
 @Preview(showBackground = false)

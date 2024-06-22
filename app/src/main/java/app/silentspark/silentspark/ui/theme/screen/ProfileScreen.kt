@@ -1,6 +1,7 @@
 package app.silentspark.silentspark.ui.theme.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -22,15 +23,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import app.silentspark.silentspark.R
 import app.silentspark.silentspark.ui.theme.components.ButtonSimpan
 import app.silentspark.silentspark.ui.theme.components.DataLengkapiProfilesiswa
 import app.silentspark.silentspark.ui.theme.components.SiswaLengkapiProfileItem
 import app.silentspark.silentspark.ui.theme.theme.ijolumut
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(
+    navController: NavHostController
+) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -44,6 +50,8 @@ fun ProfileScreen() {
                             modifier = Modifier
                                 .width(38.dp)
                                 .height(39.dp)
+                                .clickable { navController.popBackStack() }
+
                         )
                         Spacer(modifier = Modifier.width(8.dp))
 
@@ -112,5 +120,5 @@ fun ProfileScreen() {
 @Preview(showBackground = true)
 @Composable
 fun ProfileScreenPreview() {
-    ProfileScreen()
+    ProfileScreen(navController= rememberNavController())
 }

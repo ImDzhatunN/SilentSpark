@@ -36,7 +36,7 @@ fun BoxTandaTerima(
     status : String,
     total : String,
 
-) {
+    ) {
     Box(
         modifier = modifier
             .width(360.dp)
