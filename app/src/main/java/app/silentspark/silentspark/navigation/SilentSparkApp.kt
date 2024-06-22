@@ -29,7 +29,7 @@ import androidx.navigation.navArgument
 import app.silentspark.silentspark.dummy.DataDummy
 import app.silentspark.silentspark.ui.theme.screen.AkunScreen
 import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaContent
-import app.silentspark.silentspark.ui.theme.screen.BerandaSiswaScreen
+
 import app.silentspark.silentspark.ui.theme.screen.DaftarPesanan
 import app.silentspark.silentspark.ui.theme.screen.DetailKelasScreen
 import app.silentspark.silentspark.ui.theme.screen.KelasScreen
@@ -37,17 +37,16 @@ import app.silentspark.silentspark.ui.theme.screen.LoginScreen
 import app.silentspark.silentspark.ui.theme.screen.SignUpScreen
 import app.silentspark.silentspark.ui.theme.screen.SplashScreen
 import app.silentspark.silentspark.ui.theme.screen.DetailPesanan
-import app.silentspark.silentspark.ui.theme.screen.KelasScreen
-import app.silentspark.silentspark.ui.theme.screen.LoginScreen
+
 import app.silentspark.silentspark.ui.theme.screen.NotificationScreen
 import app.silentspark.silentspark.ui.theme.screen.PaymentFlow
 import app.silentspark.silentspark.ui.theme.screen.ProfileGuruScreen
 import app.silentspark.silentspark.ui.theme.screen.ProfileScreen
 import app.silentspark.silentspark.ui.theme.screen.RatingAndReviewScreen
 import app.silentspark.silentspark.ui.theme.screen.RincianPesananScreen
-import app.silentspark.silentspark.ui.theme.screen.SignUpScreen
+
 import app.silentspark.silentspark.ui.theme.screen.SiswaLengkapiProfileScreen
-import app.silentspark.silentspark.ui.theme.screen.SplashScreen
+
 import app.silentspark.silentspark.ui.theme.screen.TandaTerimaScreen
 import app.silentspark.silentspark.ui.theme.theme.Abuabu
 import app.silentspark.silentspark.ui.theme.theme.KuningMuda
